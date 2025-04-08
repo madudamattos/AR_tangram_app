@@ -1,0 +1,154 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ControlScene : MonoBehaviour
+{
+    public GameObject tangramRef;
+    public GameObject tangram;
+
+    public GameObject templates;
+
+    public GameObject menu0;
+    public GameObject menu1;
+    public GameObject menu2;
+    public GameObject menu3;
+
+    private int figure = -1;
+    private int mode = -1;
+
+    public GameObject arGameObject1; 
+    public GameObject applicationCoordinator;
+    public GameObject arucoTracking;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+            
+    }
+
+    public void ResetTangramPos()
+    {
+        tangram.SetActive(false);
+
+        tangram.transform.position = tangramRef.transform.position;
+        tangram.transform.rotation = tangramRef.transform.rotation;
+
+        int pieces = tangram.transform.childCount;
+
+        for (int i = 0; i < pieces; i++)
+        {
+            tangram.transform.GetChild(i).gameObject.transform.position = tangramRef.transform.GetChild(i).gameObject.transform.position;
+            tangram.transform.GetChild(i).gameObject.transform.rotation = tangramRef.transform.GetChild(i).gameObject.transform.rotation;
+        }
+
+        tangram.SetActive(true);
+    }
+
+    public void ActivateFigure(int index)
+    {
+        if (index == 0)
+        {
+            templates.transform.GetChild(0).gameObject.SetActive(true);
+            templates.transform.GetChild(1).gameObject.SetActive(false);
+            templates.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        else if (index == 1)
+        {
+            templates.transform.GetChild(1).gameObject.SetActive(true);
+            templates.transform.GetChild(0).gameObject.SetActive(false);
+            templates.transform.GetChild(2).gameObject.SetActive(false);
+        }
+        else if (index == 2)
+        {
+            templates.transform.GetChild(2).gameObject.SetActive(true);
+            templates.transform.GetChild(0).gameObject.SetActive(false);
+            templates.transform.GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            // Deactivate all
+            templates.transform.GetChild(2).gameObject.SetActive(false);
+            templates.transform.GetChild(0).gameObject.SetActive(false);
+            templates.transform.GetChild(1).gameObject.SetActive(false);
+        }
+    }
+
+    public void StartScreen()
+    {
+        menu0.SetActive(false);
+        menu1.SetActive(true);
+    }
+
+    public void SelectFigureScreen(int i)
+    {
+        figure = i;
+        menu1.SetActive(false);
+        menu2.SetActive(true);
+    }
+
+    public void SelectModeScreen(int i)
+    {
+        mode = i;
+        menu2.SetActive(false);
+        StartGame();
+    }
+
+    public void StartGame()
+    {
+
+        ResetTangramPos();
+
+        ActivateFigure(figure);
+
+        // Activate all tangram pieces in case of virtual assembly 
+        if (mode == 0)
+        {
+            tangram.SetActive(true);
+
+            int pieces = tangram.transform.childCount;
+
+            for (int i = 0; i < pieces; i++)
+            {
+                tangram.transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+
+        arucoTracking.SetActive(true);
+        arGameObject1.SetActive(true);
+        applicationCoordinator.SetActive(true);
+
+        menu3.SetActive(true);
+    }
+
+    public void ResetGame()
+    {
+        ActivateFigure(-1);
+
+        ResetTangramPos();
+
+        int pieces = tangram.transform.childCount;
+
+        // Reset individual pieces 
+        for (int i = 0; i < pieces; i++)
+        {
+            tangram.transform.GetChild(i).gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            tangram.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        tangram.SetActive(false);
+
+        figure = -1;
+        mode = -1;
+
+        menu1.SetActive(true);
+        menu2.SetActive(false);
+    }
+
+}
