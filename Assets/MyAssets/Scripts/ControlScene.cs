@@ -20,6 +20,7 @@ public class ControlScene : MonoBehaviour
     public GameObject arGameObject1; 
     public GameObject applicationCoordinator;
     public GameObject arucoTracking;
+    public GameObject cameraCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -120,6 +121,7 @@ public class ControlScene : MonoBehaviour
             }
         }
 
+        cameraCanvas.SetActive(true);
         arucoTracking.SetActive(true);
         arGameObject1.SetActive(true);
         applicationCoordinator.SetActive(true);

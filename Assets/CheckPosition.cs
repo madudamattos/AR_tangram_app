@@ -1,90 +1,110 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 
 public class CheckPosition : MonoBehaviour
 {
+    // Infos about template piece 
     [SerializeField] FindRightTemplate script;
-    private GameObject templatePiece;
+    private GameObject templatePiece = null;
+    private GameObject mesh;
+    private Material originalMaterial;
+
+    // Infos about current piece
     private string pieceName;
+    private GameObject proximity_sensor;
+    private Collider ps_collider;
 
-    [SerializeField] Material originalMaterial;
+    // Suporting variables
     [SerializeField] Material highlightMaterial;
+    Vector3 cp;
+    private bool flag = false;
+    private bool sameRot = false;
+    private bool templateFound = false;
+    private bool isChecking = false;
+    float media;
 
-    bool samePos = false;
-    bool sameRot = false;
+    Queue<bool> queue = new Queue<bool>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void OnEnable()
     {
         pieceName = this.gameObject.name;
+        templatePiece = script.GetTemplate(pieceName);
+        cp = templatePiece.transform.position;
+        proximity_sensor = this.gameObject.transform.Find("Proximity sensor").gameObject;
+        ps_collider = proximity_sensor.GetComponent<Collider>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (templatePiece != null)
-        {
-            // print("IN LOOP");
-            samePos = isSamePosition(templatePiece, this.gameObject);
-            sameRot = isSameRotation(templatePiece, this.gameObject);
-            if (pieceName == "Piece.005")
-            {
-                print(pieceName);
-                print("pos: " + this.gameObject.transform.position);
-                print("pos template: " + templatePiece.transform.position);
-                if (samePos) print("SAME POSITION");
-                print("rot: " + this.gameObject.transform.rotation.eulerAngles);
-                print("rot template: " + templatePiece.transform.rotation.eulerAngles);
-                if (sameRot) print("SAME ROTATION");
-            }
+        if (templateFound) return;
 
-            if (samePos)
-            {
-                templatePiece.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = highlightMaterial;
-            }
-            else
-            {
-                templatePiece.transform.GetChild(0).gameObject.GetComponent<Renderer>().material = originalMaterial;
-            }
-
-        } else
+        if (templatePiece == null)
         {
             templatePiece = script.GetTemplate(pieceName);
-            if (templatePiece != null)
-            {
-                pieceName = this.gameObject.name;
-            }
-            
+            cp = templatePiece.transform.position;
+        }
+
+        flag = checkPosition();
+
+        if (flag && !isChecking)
+        {
+            Debug.Log("Started coroutine");
+            StartCoroutine(IsSamePosition());
+        }
+
+        if (isChecking)
+        {
+            Debug.Log("Enqueing");
+            queue.Enqueue(flag);
         }
 
     }
 
-    public bool isSamePosition(GameObject template, GameObject piece)
+    public bool checkPosition()
     {
-        Vector3 offset = new Vector3(0.01f, 0.01f, 0.5f);
-
-        float diff_x = Mathf.Abs(template.transform.position.x - piece.transform.position.x);
-        float diff_y = Mathf.Abs(template.transform.position.y - piece.transform.position.y);
-        float diff_z = Mathf.Abs(template.transform.position.z - piece.transform.position.z);
-
-        return diff_x < offset.x && diff_y < offset.y && diff_z < offset.z;
+        if(!templatePiece) return false;
+        //Debug.Log("Collider bounds:" + ps_collider.bounds.Contains(cp));
+        return ps_collider.bounds.Contains(cp);
     }
 
-    public bool isSameRotation(GameObject template, GameObject piece)
+    IEnumerator IsSamePosition()
     {
-        // offset rotacao 10 graus 
-        Vector3 offset = new Vector3(15, 15, 15);
+        isChecking = true;
 
-        Vector3 templateEuler = template.transform.rotation.eulerAngles;
-        Vector3 pieceEuler = piece.transform.rotation.eulerAngles;
+        yield return new WaitForSeconds(1f);
 
-        // Calculara diferença com Mathf.DeltaAngle garante que a diferença em angulos seja sempre entre [-180 e 180], evitando problemas quando os valores passam de 360 para 0
-        float diff_x = Mathf.Abs(Mathf.DeltaAngle(templateEuler.x, pieceEuler.x));
-        float diff_y = Mathf.Abs(Mathf.DeltaAngle(templateEuler.y, pieceEuler.y));
-        float diff_z = Mathf.Abs(Mathf.DeltaAngle(templateEuler.z, pieceEuler.z));
+        isChecking = false;
 
+        int total = 0;
+        int totalTrue = 0;
 
-        return diff_z < offset.z;
+        while (queue.Count > 0)
+        {
+            bool item = queue.Dequeue();
+            total++;
+            if (item) totalTrue++;
+        }
+
+        if (total > 0)
+        {
+            media = (float) totalTrue / total;
+
+            Debug.Log("Media: " + media);
+
+            if (media > 0.75f)
+            {
+                script.ChangeTemplateMaterial(highlightMaterial);
+                Debug.Log("Template found");
+                templateFound = true;
+            }
+        }
     }
+
+
+
 }

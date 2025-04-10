@@ -1,0 +1,12 @@
+# ninja log v5
+88	1554	7659320057740644	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	186cc0c72c3bd6d8
+1566	4811	7659320089309095	C:/Users/maria/Unity/aruco_tracking_for_tangram_AR_application/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/3q5n236t/obj/arm64-v8a/libswappywrapper.so	2caf2a52150c51a3
+16	5964	7659320102999893	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	4731986b85fbe8a
+45	6136	7659320104670301	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	ef01f927dad4417
+67	6367	7659320105250888	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	cc5c58b44936a546
+3	6658	7659320108973738	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	d405984affe361dc
+77	6855	7659320110308162	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	b10f4aa746f8614f
+36	6971	7659320111558992	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	aaf2dd30ca7376cd
+55	7094	7659320113653479	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	8c0e278c30aaeb84
+26	7246	7659320116029926	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	b92bad652fdca1fe
+7246	7907	7659320122575324	C:/Users/maria/Unity/aruco_tracking_for_tangram_AR_application/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/3q5n236t/obj/arm64-v8a/libgame.so	2b1f255da1894ffd

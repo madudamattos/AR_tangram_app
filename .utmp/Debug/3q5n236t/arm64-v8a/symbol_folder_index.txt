@@ -1,0 +1,1 @@
+C:\Users\maria\Unity\aruco_tracking_for_tangram_AR_application\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\Debug\3q5n236t\obj\arm64-v8a
