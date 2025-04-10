@@ -8,7 +8,6 @@ public class CheckPosition : MonoBehaviour
     // Infos about template piece 
     [SerializeField] FindRightTemplate script;
     private GameObject templatePiece = null;
-    private GameObject mesh;
     private Material originalMaterial;
 
     // Infos about current piece
@@ -24,31 +23,45 @@ public class CheckPosition : MonoBehaviour
     private bool templateFound = false;
     private bool isChecking = false;
     float media;
+    int queueCount = 0;
 
     Queue<bool> queue = new Queue<bool>();
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void OnEnable()
     {
         pieceName = this.gameObject.name;
         templatePiece = script.GetTemplate(pieceName);
         cp = templatePiece.transform.position;
-        proximity_sensor = this.gameObject.transform.Find("Proximity sensor").gameObject;
+        proximity_sensor = this.transform.Find("ProximitySensor").gameObject;
         ps_collider = proximity_sensor.GetComponent<Collider>();
-
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        if (templateFound) return;
+        //if (templateFound) return;
+
+        // verifing variables
+        if (pieceName == null) {
+            pieceName = this.gameObject.name;
+            return;
+        }
 
         if (templatePiece == null)
         {
             templatePiece = script.GetTemplate(pieceName);
             cp = templatePiece.transform.position;
+            originalMaterial = templatePiece.GetComponent<Renderer>().material;
+            return;
         }
 
+        if (proximity_sensor == null)
+        {
+            proximity_sensor = this.transform.Find("ProximitySensor").gameObject;
+            ps_collider = proximity_sensor.GetComponent<Collider>();
+            return;
+        }
+
+        // game loop
         flag = checkPosition();
 
         if (flag && !isChecking)
@@ -68,7 +81,6 @@ public class CheckPosition : MonoBehaviour
     public bool checkPosition()
     {
         if(!templatePiece) return false;
-        //Debug.Log("Collider bounds:" + ps_collider.bounds.Contains(cp));
         return ps_collider.bounds.Contains(cp);
     }
 
@@ -76,12 +88,15 @@ public class CheckPosition : MonoBehaviour
     {
         isChecking = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         isChecking = false;
 
         int total = 0;
         int totalTrue = 0;
+
+        Debug.Log("Tamanho da fila: " + queue.Count);
+        queueCount = queue.Count;
 
         while (queue.Count > 0)
         {
@@ -101,6 +116,11 @@ public class CheckPosition : MonoBehaviour
                 script.ChangeTemplateMaterial(highlightMaterial);
                 Debug.Log("Template found");
                 templateFound = true;
+            }
+            else
+            {
+                script.ChangeTemplateMaterial(originalMaterial);
+                templateFound = false;
             }
         }
     }

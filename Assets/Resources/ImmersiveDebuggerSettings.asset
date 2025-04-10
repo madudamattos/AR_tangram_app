@@ -26,7 +26,7 @@ MonoBehaviour:
   rotateOverride: 0
   showInfoLog: 1
   showWarningLog: 1
-  showErrorLog: 0
+  showErrorLog: 1
   collapsedIdenticalLogEntries: 0
   maximumNumberOfLogEntries: 1000
   panelDistance: 1

@@ -6,15 +6,16 @@ public class testFunction : MonoBehaviour
     public Material newMat;
 
     public GameObject Piece;
+    private GameObject proximitySensor;
+
     Collider m_Collider;
     Vector3 m_Point;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        originalMat = GetComponent<Renderer>().material;
-        m_Collider = GetComponent<Collider>();
+        proximitySensor = this.transform.Find("ProximitySensor").gameObject;
+        m_Collider = proximitySensor.GetComponent<Collider>();
         m_Point = Piece.transform.position;
     }
 
@@ -23,16 +24,20 @@ public class testFunction : MonoBehaviour
     {
         m_Point = Piece.transform.position;
 
+        if(proximitySensor == null)
+        {
+            print("Proximity sensor not found");
+            return;
+        }
+
         if (m_Collider.bounds.Contains(m_Point))
         {
             Debug.Log("Bounds contain the point : " + m_Point);
-            this.GetComponent<Renderer>().material = newMat;
-        }
-        else
+        } else
         {
-
-            this.GetComponent<Renderer>().material = originalMat;
+            Debug.Log("Bounds does NOT contain the point: " + m_Point);
         }
+
     }
 
     
