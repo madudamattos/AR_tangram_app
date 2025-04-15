@@ -13,6 +13,7 @@ public class ControlScene : MonoBehaviour
     [SerializeField] GameObject menu1;
     [SerializeField] GameObject menu2;
     [SerializeField] GameObject menu3;
+    [SerializeField] GameObject menu4;
 
     private int figure = -1;
     private int mode = -1;
@@ -151,6 +152,8 @@ public class ControlScene : MonoBehaviour
 
         } else
         {
+            menu4.SetActive(true);
+
             cameraCanvas.SetActive(true);
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
@@ -186,6 +189,13 @@ public class ControlScene : MonoBehaviour
 
         menu1.SetActive(true);
         menu2.SetActive(false);
+        menu4.SetActive(false);
+    }
+
+    public void ShowHint()
+    {
+        Material originalMat = ARGameObjects[found].transform.Find("Mesh").gameObject.GetComponent<Renderer>().material;
+        ARGameObjects[found].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(originalMat);
     }
 
 }

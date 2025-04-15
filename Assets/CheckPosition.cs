@@ -67,20 +67,17 @@ public class CheckPosition : MonoBehaviour
             return;
         }
 
-        Debug.Log("Check Position loop");
 
         // game loop
         flag = CheckTemplatePosition();
 
         if (flag && !isChecking)
         {
-            Debug.Log("Started coroutine");
             StartCoroutine(IsSamePosition());
         }
 
         if (isChecking)
         {
-            Debug.Log("Enqueing + " + templatePiece);
             queue.Enqueue(flag);
         }
 
@@ -118,7 +115,7 @@ public class CheckPosition : MonoBehaviour
 
             if (media > 0.75f)
             {
-                script.ChangeTemplateMaterial(colorMaterial);
+                script.ChangeTemplateMaterial(highlightMaterial);
                 templateFound = true;
             }
         }
@@ -129,7 +126,6 @@ public class CheckPosition : MonoBehaviour
         if(templateFound) return true;
         return false;
     }
-
     
 
 }
