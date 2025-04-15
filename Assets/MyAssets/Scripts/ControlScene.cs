@@ -4,28 +4,26 @@ using UnityEngine;
 
 public class ControlScene : MonoBehaviour
 {
-    public GameObject tangramRef;
-    public GameObject tangram;
+    [SerializeField] GameObject tangramRef;
+    [SerializeField] GameObject tangram;
 
-    public GameObject templates;
+    [SerializeField] GameObject templates;
 
-    public GameObject menu0;
-    public GameObject menu1;
-    public GameObject menu2;
-    public GameObject menu3;
+    [SerializeField] GameObject menu0;
+    [SerializeField] GameObject menu1;
+    [SerializeField] GameObject menu2;
+    [SerializeField] GameObject menu3;
 
     private int figure = -1;
     private int mode = -1;
     private int pieces = 0;
+ 
+    [SerializeField] GameObject applicationCoordinator;
+    [SerializeField] GameObject arucoTracking;
+    [SerializeField] GameObject cameraCanvas;
 
-    // public GameObject arGameObject1; 
-    public GameObject applicationCoordinator;
-    public GameObject arucoTracking;
-    public GameObject cameraCanvas;
+    [SerializeField] GameObject[] ARGameObjects = new GameObject[7];
 
-    public GameObject[] ARGameObjects = new GameObject[7];
-
-    private GameObject currentARGameObj;
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
@@ -42,7 +40,7 @@ public class ControlScene : MonoBehaviour
 
         if (gameloop && mode == 1)
         {
-            currentARGameObj = ARGameObjects[found];
+            GameObject currentARGameObj = ARGameObjects[found];
             templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
 
             if (templateFound)
