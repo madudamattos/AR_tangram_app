@@ -16,11 +16,19 @@ public class ControlScene : MonoBehaviour
 
     private int figure = -1;
     private int mode = -1;
+    private int pieces = 0;
 
-    public GameObject arGameObject1; 
+    // public GameObject arGameObject1; 
     public GameObject applicationCoordinator;
     public GameObject arucoTracking;
     public GameObject cameraCanvas;
+
+    public GameObject[] ARGameObjects = new GameObject[7];
+
+    private GameObject currentARGameObj;
+    private bool gameloop = false;
+    private bool templateFound = false;
+    private int found = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +39,30 @@ public class ControlScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+
+        if (gameloop && mode == 1)
+        {
+            currentARGameObj = ARGameObjects[found];
+            templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
+
+            if (templateFound)
+            {
+                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
+                found++;
+
+                // verifica se era a ultima peça fim de jogo
+                if (found >= 4)
+                {
+                    Debug.Log("GameOver");
+                    gameloop = false;
+                    return;
+                }
+
+                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
+            }
+
+        }
+
     }
 
     public void ResetTangramPos()
@@ -41,7 +72,7 @@ public class ControlScene : MonoBehaviour
         tangram.transform.position = tangramRef.transform.position;
         tangram.transform.rotation = tangramRef.transform.rotation;
 
-        int pieces = tangram.transform.childCount;
+        pieces = tangram.transform.childCount;
 
         for (int i = 0; i < pieces; i++)
         {
@@ -113,18 +144,24 @@ public class ControlScene : MonoBehaviour
         {
             tangram.SetActive(true);
 
-            int pieces = tangram.transform.childCount;
+            pieces = tangram.transform.childCount;
 
             for (int i = 0; i < pieces; i++)
             {
                 tangram.transform.GetChild(i).gameObject.SetActive(true);
             }
-        }
 
-        cameraCanvas.SetActive(true);
-        arucoTracking.SetActive(true);
-        arGameObject1.SetActive(true);
-        applicationCoordinator.SetActive(true);
+        } else
+        {
+            cameraCanvas.SetActive(true);
+            arucoTracking.SetActive(true);
+            applicationCoordinator.SetActive(true);
+
+            ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
+
+            gameloop = true;
+            found++;
+        }
 
         menu3.SetActive(true);
     }

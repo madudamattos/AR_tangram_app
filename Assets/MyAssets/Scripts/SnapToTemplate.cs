@@ -22,7 +22,7 @@ public class SnapToTemplate : MonoBehaviour
 
     void OnEnable()
     {
-        templatePiece = script_findTemplate.GetTemplate(this.gameObject.name);
+        templatePiece = script_findTemplate.GetTemplate();
         templateName = templatePiece.name;
     }
 

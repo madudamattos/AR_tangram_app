@@ -7,13 +7,13 @@ public class FindRightTemplate : MonoBehaviour
     private GameObject templatePiece = null;
     private Material originalMat;
 
-    string templateName = "";
-
-    public GameObject GetTemplate(string pieceName)
+    public GameObject GetTemplate()
     {
+        string pieceName = this.gameObject.name;
+      
         string pieceNumber = pieceName.Substring((pieceName.Length - 3), 3);
-        
-        templateName = "Template" + "." + pieceNumber;
+      
+        string templateName = "Template" + "." + pieceNumber;
 
         templatePiece = GameObject.Find(templateName);
 
@@ -24,7 +24,7 @@ public class FindRightTemplate : MonoBehaviour
 
     public void ChangeTemplateMaterial(Material mat)
     { 
-        Renderer templateRenderer = templatePiece.transform.Find("Mesh").gameObject.GetComponent<Renderer>();
+        Renderer templateRenderer = this.templatePiece.transform.Find("Mesh").gameObject.GetComponent<Renderer>();
         templateRenderer.material = mat ? mat : originalMat;
     }
 

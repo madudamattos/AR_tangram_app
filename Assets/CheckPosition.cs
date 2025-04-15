@@ -3,34 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 
+[RequireComponent(typeof(FindRightTemplate))]
 public class CheckPosition : MonoBehaviour
 {
     // Infos about template piece 
-    [SerializeField] FindRightTemplate script;
-    private GameObject templatePiece = null;
-    private Material originalMaterial;
+    private FindRightTemplate script;
+    public GameObject templatePiece = null;
+    private Material colorMaterial;
 
     // Infos about current piece
     private string pieceName;
     private GameObject proximity_sensor;
     private Collider ps_collider;
+    private GameObject mesh;
 
     // Suporting variables
     [SerializeField] Material highlightMaterial;
-    Vector3 cp;
+    private Vector3 cp;
     private bool flag = false;
-    private bool sameRot = false;
-    private bool templateFound = false;
+    public bool templateFound = false;
     private bool isChecking = false;
-    float media;
-    int queueCount = 0;
-
-    Queue<bool> queue = new Queue<bool>();
+    private float media = 0;
+    private int queueCount = 0;
+    private Queue<bool> queue = new Queue<bool>();
     
     void OnEnable()
     {
+        script = this.GetComponent<FindRightTemplate>();
         pieceName = this.gameObject.name;
-        templatePiece = script.GetTemplate(pieceName);
+        templatePiece = script.GetTemplate();
         cp = templatePiece.transform.position;
         proximity_sensor = this.transform.Find("ProximitySensor").gameObject;
         ps_collider = proximity_sensor.GetComponent<Collider>();
@@ -38,7 +39,7 @@ public class CheckPosition : MonoBehaviour
     
     void Update()
     {
-        //if (templateFound) return;
+        if (templateFound) return;
 
         // verifing variables
         if (pieceName == null) {
@@ -48,9 +49,8 @@ public class CheckPosition : MonoBehaviour
 
         if (templatePiece == null)
         {
-            templatePiece = script.GetTemplate(pieceName);
+            templatePiece = script.GetTemplate();
             cp = templatePiece.transform.position;
-            originalMaterial = templatePiece.GetComponent<Renderer>().material;
             return;
         }
 
@@ -61,8 +61,16 @@ public class CheckPosition : MonoBehaviour
             return;
         }
 
+        if (mesh == null) {
+            mesh = this.transform.Find("Mesh").gameObject;
+            colorMaterial = mesh.GetComponent<Renderer>().material;
+            return;
+        }
+
+        Debug.Log("Check Position loop");
+
         // game loop
-        flag = checkPosition();
+        flag = CheckTemplatePosition();
 
         if (flag && !isChecking)
         {
@@ -72,13 +80,13 @@ public class CheckPosition : MonoBehaviour
 
         if (isChecking)
         {
-            Debug.Log("Enqueing");
+            Debug.Log("Enqueing + " + templatePiece);
             queue.Enqueue(flag);
         }
 
     }
 
-    public bool checkPosition()
+    public bool CheckTemplatePosition()
     {
         if(!templatePiece) return false;
         return ps_collider.bounds.Contains(cp);
@@ -95,7 +103,6 @@ public class CheckPosition : MonoBehaviour
         int total = 0;
         int totalTrue = 0;
 
-        Debug.Log("Tamanho da fila: " + queue.Count);
         queueCount = queue.Count;
 
         while (queue.Count > 0)
@@ -109,22 +116,20 @@ public class CheckPosition : MonoBehaviour
         {
             media = (float) totalTrue / total;
 
-            Debug.Log("Media: " + media);
-
             if (media > 0.75f)
             {
-                script.ChangeTemplateMaterial(highlightMaterial);
-                Debug.Log("Template found");
+                script.ChangeTemplateMaterial(colorMaterial);
                 templateFound = true;
-            }
-            else
-            {
-                script.ChangeTemplateMaterial(originalMaterial);
-                templateFound = false;
             }
         }
     }
 
+    public bool TemplateFound()
+    {
+        if(templateFound) return true;
+        return false;
+    }
 
+    
 
 }
