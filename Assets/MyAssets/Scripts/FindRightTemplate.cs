@@ -20,13 +20,22 @@ public class FindRightTemplate : MonoBehaviour
         originalMat = templatePiece.transform.Find("Mesh").gameObject.GetComponent<Renderer>().material;
 
         return templatePiece;
-        return templatePiece;
     }
 
     public void ChangeTemplateMaterial(Material mat)
     {
         Renderer templateRenderer = this.templatePiece.transform.Find("Mesh").gameObject.GetComponent<Renderer>();
         templateRenderer.material = mat ? mat : originalMat;
+    }
+
+    public void ActivateTemplateMesh()
+    {
+        this.templatePiece.transform.Find("Mesh").gameObject.GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    public void DeactivateTemplateMesh()
+    {
+        this.templatePiece.transform.Find("Mesh").gameObject.GetComponent<MeshRenderer>().enabled = false;
     }
 
 }

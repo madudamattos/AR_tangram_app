@@ -46,7 +46,7 @@ public class ControlScene : MonoBehaviour
 
             if (templateFound)
             {
-                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
+                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
                 found++;
 
                 // verifica se era a ultima peça fim de jogo
@@ -57,7 +57,7 @@ public class ControlScene : MonoBehaviour
                     return;
                 }
 
-                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
+                //ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
             }
 
         }
@@ -158,7 +158,7 @@ public class ControlScene : MonoBehaviour
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
-            ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
+            // ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
 
             gameloop = true;
             found++;
@@ -184,9 +184,18 @@ public class ControlScene : MonoBehaviour
 
         tangram.SetActive(false);
 
+        // Reset AR tangram
+ /*       for (int i = 0; i < ARGameObjects.Length; i++)
+        {
+            ARGameObjects[i].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(null);
+            ARGameObjects[i].GetComponent<FindRightTemplate>().DeactivateTemplateMesh();
+        }*/
+
+        // Reset variables
         figure = -1;
         mode = -1;
 
+        // Reset menus
         menu1.SetActive(true);
         menu2.SetActive(false);
         menu4.SetActive(false);
@@ -194,8 +203,7 @@ public class ControlScene : MonoBehaviour
 
     public void ShowHint()
     {
-        Material originalMat = ARGameObjects[found].transform.Find("Mesh").gameObject.GetComponent<Renderer>().material;
-        ARGameObjects[found].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(originalMat);
+        ARGameObjects[found].GetComponent<FindRightTemplate>().ActivateTemplateMesh();
     }
 
 }

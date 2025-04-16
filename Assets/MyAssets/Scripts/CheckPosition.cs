@@ -61,12 +61,6 @@ public class CheckPosition : MonoBehaviour
             return;
         }
 
-        if (mesh == null) {
-            mesh = this.transform.Find("Mesh").gameObject;
-            colorMaterial = mesh.GetComponent<Renderer>().material;
-            return;
-        }
-
 
         // game loop
         flag = CheckTemplatePosition();
@@ -116,6 +110,8 @@ public class CheckPosition : MonoBehaviour
             if (media > 0.75f)
             {
                 script.ChangeTemplateMaterial(highlightMaterial);
+                script.ActivateTemplateMesh();
+                Invoke(nameof(ChangeTemplate), 1.0f);
                 templateFound = true;
             }
         }
@@ -126,6 +122,11 @@ public class CheckPosition : MonoBehaviour
         if(templateFound) return true;
         return false;
     }
-    
+
+    void ChangeTemplate()
+    {
+        script.DeactivateTemplateMesh();
+        script.ChangeTemplateMaterial(null);
+    }
 
 }
