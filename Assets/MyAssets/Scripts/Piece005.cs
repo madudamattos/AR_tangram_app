@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 // using UnityEditor;
@@ -90,3 +90,4 @@ public class Piece005 : CheckPosition
         return true;
     }
 }
+*/

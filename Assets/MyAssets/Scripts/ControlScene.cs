@@ -67,7 +67,7 @@ public class ControlScene : MonoBehaviour
         switch (piece.name)
         {
             case "Piece.005":
-                return piece.GetComponent<Piece005>().TemplateFound();
+                return piece.GetComponent<CheckPosition>().TemplateFound();
 /*            case "Piece.006":
                 return piece.GetComponent<Piece006>().TemplateFound();
             case "Piece.007":
