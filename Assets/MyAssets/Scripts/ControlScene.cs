@@ -40,11 +40,11 @@ public class ControlScene : MonoBehaviour
         if (gameloop && mode == 1)
         {
             GameObject currentARGameObj = ARGameObjects[found];
-            templateFound = PieceSelector(currentARGameObj);
+            templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
 
             if (templateFound)
             {
-                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
+                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
                 found++;
 
                 // verifica se era a ultima peça fim de jogo
@@ -55,27 +55,11 @@ public class ControlScene : MonoBehaviour
                     return;
                 }
 
-                //ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
+                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
             }
 
         }
 
-    }
-
-    bool PieceSelector(GameObject piece)
-    {
-        switch (piece.name)
-        {
-            case "Piece.005":
-                return piece.GetComponent<CheckPosition>().TemplateFound();
-/*            case "Piece.006":
-                return piece.GetComponent<Piece006>().TemplateFound();
-            case "Piece.007":
-                return piece.GetComponent<Piece007>().TemplateFound();*/
-            default:
-                Debug.Log("[Piece selector]: script not found");
-                return false;
-        }
     }
 
     public void ResetTangramPos()
@@ -172,7 +156,7 @@ public class ControlScene : MonoBehaviour
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
-            // ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
+            ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
 
             gameloop = true;
             found++;

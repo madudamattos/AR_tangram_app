@@ -83,17 +83,37 @@ public class CheckPosition : FindRightTemplate
 
     bool CheckTemplatePosition()
     {
-        if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
+        switch(pieceName)
         {
-            Debug.LogWarning("Lista de colliders ou pontos está incompleta.");
-            return false;
-        }
+            case "Piece.005":
+                if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
+                {
+                    Debug.Log("Colliders list or template points list for piece 005 is incomplete. Returning false");
+                    return false;
+                }
+                if (pieceCollidersList[0].bounds.Contains(templatePointsList[0].position) && 
+                    pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) && 
+                    pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
+                    pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
+                    return true;
+                break;
 
-        if (pieceCollidersList[0].bounds.Contains(templatePointsList[0].position) && pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
-            pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
-            pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
-        {
-            return true;
+            case "Piece.006":
+                if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
+                {
+                    Debug.Log("Colliders list or template points list for piece 006 is incomplete. Returning false");
+                    return false;
+                }
+                if (pieceCollidersList[0].bounds.Contains(templatePointsList[0].position) &&
+                    pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
+                    pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
+                    pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
+                    return true;
+                break;
+
+            default:
+                Debug.Log("Piece name not found");
+                break;
         }
 
         return false;
@@ -136,9 +156,10 @@ public class CheckPosition : FindRightTemplate
         return templateFound;
     }
 
+    // Template set back its original material
     public void ChangeTemplate()
     {
-        base.DeactivateTemplateMesh();
+        //base.DeactivateTemplateMesh();
         base.ChangeTemplateMaterial(null);
     }
 }
