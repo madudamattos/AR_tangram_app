@@ -127,7 +127,7 @@ namespace TryAR.MarkerTracking
                 return;
 
             // Toggle between camera view and AR visualization on button press
-            HandleVisualizationToggle();
+            // HandleVisualizationToggle();
             
             // Update tracking and visualization
             UpdateCameraPoses();
@@ -145,13 +145,13 @@ namespace TryAR.MarkerTracking
         /// </summary>
         private void HandleVisualizationToggle()
         {
-            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch) &&
+/*            if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch) &&
                 OVRInput.IsControllerConnected(OVRInput.Controller.RTouch))
             {
                 m_showCameraCanvas = !m_showCameraCanvas;
                 m_cameraCanvas.gameObject.SetActive(m_showCameraCanvas);
                 SetMarkerObjectsVisibility(!m_showCameraCanvas);
-            }
+            }*/
         }
 
 

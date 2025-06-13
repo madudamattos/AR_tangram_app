@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ControlScene : MonoBehaviour
 {
+    [Header("Tangram References")]
     [SerializeField] GameObject tangramRef;
     [SerializeField] GameObject tangram;
 
     [SerializeField] GameObject templates;
 
+    [Header("Menu Screens")]
     [SerializeField] GameObject menu0;
     [SerializeField] GameObject menu1;
     [SerializeField] GameObject menu2;
@@ -18,22 +20,18 @@ public class ControlScene : MonoBehaviour
     private int figure = -1;
     private int mode = -1;
     private int pieces = 0;
- 
+
+    [Header("Aruco Objects")]
     [SerializeField] GameObject applicationCoordinator;
     [SerializeField] GameObject arucoTracking;
     [SerializeField] GameObject cameraCanvas;
 
+    [Header("AR Pieces")]
     [SerializeField] GameObject[] ARGameObjects = new GameObject[7];
 
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -42,7 +40,7 @@ public class ControlScene : MonoBehaviour
         if (gameloop && mode == 1)
         {
             GameObject currentARGameObj = ARGameObjects[found];
-            templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
+            templateFound = PieceSelector(currentARGameObj);
 
             if (templateFound)
             {
@@ -62,6 +60,22 @@ public class ControlScene : MonoBehaviour
 
         }
 
+    }
+
+    bool PieceSelector(GameObject piece)
+    {
+        switch (piece.name)
+        {
+            case "Piece.005":
+                return piece.GetComponent<Piece005>().TemplateFound();
+/*            case "Piece.006":
+                return piece.GetComponent<Piece006>().TemplateFound();
+            case "Piece.007":
+                return piece.GetComponent<Piece007>().TemplateFound();*/
+            default:
+                Debug.Log("[Piece selector]: script not found");
+                return false;
+        }
     }
 
     public void ResetTangramPos()
@@ -154,7 +168,7 @@ public class ControlScene : MonoBehaviour
         {
             menu4.SetActive(true);
 
-            cameraCanvas.SetActive(true);
+            // cameraCanvas.SetActive(true);
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 

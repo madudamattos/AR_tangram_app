@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class FindRightTemplate : MonoBehaviour
 {
-    private GameObject templatePiece = null;
+    protected GameObject templatePiece = null;
     private Material originalMat;
+    protected string pieceName = null;
 
-    public GameObject GetTemplate()
+    protected virtual void Start()
     {
-        string pieceName = this.gameObject.name;
+        templatePiece = FindTemplate();
+    }
+
+    public GameObject FindTemplate()
+    {
+        pieceName = this.gameObject.name;
       
         string pieceNumber = pieceName.Substring((pieceName.Length - 3), 3);
       
@@ -19,6 +25,11 @@ public class FindRightTemplate : MonoBehaviour
 
         originalMat = templatePiece.transform.Find("Mesh").gameObject.GetComponent<Renderer>().material;
 
+        return templatePiece;
+    }
+
+    public GameObject GetTemplate()
+    {
         return templatePiece;
     }
 
