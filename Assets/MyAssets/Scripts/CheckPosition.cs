@@ -27,6 +27,7 @@ public class CheckPosition : FindRightTemplate
     protected override void Start()
     {
         base.Start();
+        pieceName = this.gameObject.name;
     }
 
     void Update()
@@ -59,7 +60,13 @@ public class CheckPosition : FindRightTemplate
         if (templatePiece == null)
         {
             Debug.Log("Template piece is null");
-            templatePiece = base.GetTemplate();
+            templatePiece = base.FindTemplate();
+            return false;
+        }
+
+        if (pieceName == null) 
+        {
+            Debug.Log("Piecename is null");
             return false;
         }
 
@@ -91,26 +98,50 @@ public class CheckPosition : FindRightTemplate
                     Debug.Log("Colliders list or template points list for piece 005 is incomplete. Returning false");
                     return false;
                 }
-                if (pieceCollidersList[0].bounds.Contains(templatePointsList[0].position) && 
-                    pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) && 
+                if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) && 
                     pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                     pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
                     return true;
                 break;
-
             case "Piece.006":
-                if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
+                if (pieceCollidersList.Count < 4 || templatePointsList.Count < 3)
                 {
                     Debug.Log("Colliders list or template points list for piece 006 is incomplete. Returning false");
                     return false;
                 }
-                if (pieceCollidersList[0].bounds.Contains(templatePointsList[0].position) &&
-                    pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
+                if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                     pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                     pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
                     return true;
                 break;
+            case "Piece.007":
+                if (pieceCollidersList.Count < 5 || templatePointsList.Count < 4)
+                {
+                    Debug.Log("Colliders list or template points list for piece 006 is incomplete. Returning false");
+                    return false;
+                }
+                if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
+                    pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
+                    pieceCollidersList[3].bounds.Contains(templatePointsList[3].position) &&
+                    pieceCollidersList[4].bounds.Contains(templatePointsList[4].position))
+                    return true;
+                else if (pieceCollidersList[4].bounds.Contains(templatePointsList[1].position) &&
+                         pieceCollidersList[1].bounds.Contains(templatePointsList[2].position) &&
+                         pieceCollidersList[2].bounds.Contains(templatePointsList[3].position) &&
+                         pieceCollidersList[3].bounds.Contains(templatePointsList[4].position))
+                    return true;
+                else if (pieceCollidersList[3].bounds.Contains(templatePointsList[1].position) &&
+                         pieceCollidersList[4].bounds.Contains(templatePointsList[2].position) &&
+                         pieceCollidersList[1].bounds.Contains(templatePointsList[3].position) &&
+                         pieceCollidersList[2].bounds.Contains(templatePointsList[4].position))
+                    return true;
+                else if (pieceCollidersList[2].bounds.Contains(templatePointsList[1].position) &&
+                         pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
+                         pieceCollidersList[4].bounds.Contains(templatePointsList[3].position) &&
+                         pieceCollidersList[1].bounds.Contains(templatePointsList[4].position))
+                    return true;
 
+                break;
             default:
                 Debug.Log("Piece name not found");
                 break;

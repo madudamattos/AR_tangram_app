@@ -1627,9 +1627,9 @@ MonoBehaviour:
   m_arucoMarkerTracking: {fileID: 546589274}
   m_markerGameObjectPairs:
   - markerId: 1
-    gameObject: {fileID: 1781027634}
+    gameObject: {fileID: 868232210}
   - markerId: 2
-    gameObject: {fileID: 110205323}
+    gameObject: {fileID: 1723155233}
 --- !u!1 &340539805
 GameObject:
   m_ObjectHideFlags: 0
@@ -3416,7 +3416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dictionaryId: 0
-  _markerLength: 0.026
+  _markerLength: 0.022
   _poseFilterCoefficient: 0.5
   _divideNumber: 2
 --- !u!4 &546589276

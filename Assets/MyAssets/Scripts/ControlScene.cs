@@ -44,7 +44,7 @@ public class ControlScene : MonoBehaviour
 
             if (templateFound)
             {
-                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
+                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
                 found++;
 
                 // verifica se era a ultima peça fim de jogo
@@ -55,7 +55,7 @@ public class ControlScene : MonoBehaviour
                     return;
                 }
 
-                ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
+                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
             }
 
         }
@@ -156,7 +156,7 @@ public class ControlScene : MonoBehaviour
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
-            ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
+            // ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
 
             gameloop = true;
             found++;
