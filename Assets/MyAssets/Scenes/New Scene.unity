@@ -516,11 +516,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 877702253}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62adf54fd460dbc4aa3a8eaa6023f859, type: 3}
+  m_Script: {fileID: 11500000, guid: fd4c3e81064c8a440ac4e8fc67eb4150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMat: {fileID: 2100000, guid: a42c654357d6c42428bafcab7c35b6ae, type: 2}
-  Piece: {fileID: 1484283839}
+  proximitySensor: {fileID: 1825119962}
+  obj: {fileID: 1484283843}
+  onTouchEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1484283844}
+        m_TargetAssemblyTypeName: Test2, Assembly-CSharp
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1034830721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1238,7 @@ GameObject:
   - component: {fileID: 1484283842}
   - component: {fileID: 1484283841}
   - component: {fileID: 1484283840}
+  - component: {fileID: 1484283844}
   m_Layer: 0
   m_Name: Obj
   m_TagString: Untagged
@@ -1321,6 +1337,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1484283844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1484283839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f4aad8b77f6f49a13b49cd2a52b94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 2100000, guid: a42c654357d6c42428bafcab7c35b6ae, type: 2}
 --- !u!1 &1517171947
 GameObject:
   m_ObjectHideFlags: 0

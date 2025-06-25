@@ -4,7 +4,7 @@ public class ChoosePiece : MonoBehaviour
 {
     public bool waiting = false;
 
-    [SerializeField] P001 p001;
+    // [SerializeField] P001 p001;
 /*    [SerializeField] P002 p002;
     [SerializeField] P003 p003;
     [SerializeField] P004 p004;

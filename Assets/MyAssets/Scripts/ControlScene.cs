@@ -36,7 +36,6 @@ public class ControlScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (gameloop && mode == 1)
         {
             GameObject currentARGameObj = ARGameObjects[found];
