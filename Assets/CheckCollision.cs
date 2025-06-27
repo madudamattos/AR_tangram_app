@@ -2,22 +2,23 @@ using UnityEngine;
 
 public class CheckCollision : MonoBehaviour
 {
-    public string colliderName = "";
-    public bool collide = false;
+    private string colliderName = "";
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.transform.parent.name.Substring(0, 4)  == "Piece")
+        Debug.Log("1:" + col.gameObject.transform.parent.name);
+        Debug.Log(col.gameObject.transform.parent.name.Substring(0, 5));
+
+        if (col.gameObject.transform.parent.name.Substring(0, 5) == "Piece")
         {
             colliderName = col.gameObject.transform.parent.name;
-            collide = true;
-
-            // callback event
-        } 
+            Debug.Log("[CHECK COLLISION]: piece found: " + colliderName);
+        }
         else
         {
             ResetVariables();
         }
+  
     }
 
     void OnTriggerExit(Collider col)
@@ -28,6 +29,10 @@ public class CheckCollision : MonoBehaviour
     public void ResetVariables()
     {
         colliderName = "";
-        collide = false;
+    }
+
+    public string GetCollision()
+    {
+        return colliderName;
     }
 }

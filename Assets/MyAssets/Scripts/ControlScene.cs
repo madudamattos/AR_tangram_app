@@ -29,24 +29,48 @@ public class ControlScene : MonoBehaviour
     [Header("AR Pieces")]
     [SerializeField] GameObject[] ARGameObjects = new GameObject[7];
 
+    [Header("Piece Detectors")]
+    [SerializeField] CheckCollision _checkCollision;
+    [SerializeField] GameObject[] PieceDetector = new GameObject[7];
+    private GameObject currentARGameObj = null;
+
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
+    private bool waiting = true;
+
 
     // Update is called once per frame
     void Update()
     {
         if (gameloop && mode == 1)
         {
-            GameObject currentARGameObj = ARGameObjects[found];
+            
+            // Esperando uma peça ser selecionada
+            if (waiting)
+            {
+                selectPiece();
+                return;
+            }
+
+            if (currentARGameObj != null)
+            {
+                Debug.Log("[CONTROLSCENE]: current ar game obj: " + currentARGameObj.name);
+            } 
+            else
+            {
+                Debug.Log("[CONTROLSCENE]: current ar game obj is null");
+            }
+
             templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
 
             if (templateFound)
             {
-                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(false);
+                Debug.Log("Entered templatefound");
                 found++;
+                currentARGameObj.SetActive(false);
 
-                // verifica se era a ultima peça fim de jogo
+                // verifica se era a ultima peça para finalizar o jogo
                 if (found >= 4)
                 {
                     Debug.Log("GameOver");
@@ -54,11 +78,54 @@ public class ControlScene : MonoBehaviour
                     return;
                 }
 
-                // ARGameObjects[found].transform.Find("Mesh").gameObject.SetActive(true);
-            }
+                templateFound = false;
+                waiting = true;
 
+                Debug.Log("[CONTROLSCENE]: Set waiting = true");
+            }
         }
 
+    }
+
+    public void selectPiece()
+    {
+        string col = _checkCollision.GetCollision();
+
+        if (col != "")
+        {
+            GameObject selectedObj = null;
+            int index = -1;
+
+            switch (col)
+            {
+                case "Piece.001": index = 0; break;
+                case "Piece.002": index = 1; break;
+                case "Piece.003": index = 2; break;
+                case "Piece.004": index = 3; break;
+                case "Piece.005": index = 4; break;
+                case "Piece.006": index = 5; break;
+                case "Piece.007": index = 6; break;
+                default: return;
+            }
+
+            selectedObj = ARGameObjects[index];
+
+            // Verificação para não repetir o mesmo objeto
+            if (selectedObj == currentARGameObj || selectedObj == null)
+            {
+                Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
+                return;
+            }
+
+            currentARGameObj = selectedObj;
+            PieceDetector[index].SetActive(false);
+
+            currentARGameObj.SetActive(true);
+            waiting = false;
+            Debug.Log("[CONTROLSCENE]: Set waiting = false");
+        }
+
+        return;
     }
 
     public void ResetTangramPos()

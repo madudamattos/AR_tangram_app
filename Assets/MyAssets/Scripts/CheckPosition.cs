@@ -34,7 +34,7 @@ public class CheckPosition : FindRightTemplate
     {
         if (!VerifyStartConditions())
         {
-            Debug.Log("Start conditions did not match. Returning.");
+            Debug.Log("[CHECKPOSITION]: Start conditions did not match. Returning.");
             return;
         }
 
@@ -59,46 +59,44 @@ public class CheckPosition : FindRightTemplate
         // verifing variables
         if (templatePiece == null)
         {
-            Debug.Log("Template piece is null");
+            Debug.Log("[CHECKPOSITION]: Template piece is null");
             templatePiece = base.FindTemplate();
             return false;
         }
 
-        if (pieceName == null) 
+        if (pieceName == null)
         {
-            Debug.Log("Piecename is null");
+            Debug.Log("[CHECKPOSITION]: Piecename is null");
             return false;
         }
 
         // verify if exst
         if (pieceCollidersList == null)
         {
-            Debug.Log("Piece collider list is null");
+            Debug.Log("[CHECKPOSITION]: Piece collider list is null");
             return false;
         }
 
         if (templatePointsList == null)
         {
-            Debug.Log("Template points list is null");
+            Debug.Log("[CHECKPOSITION]: Template points list is null");
             return false;
         }
-
-        Debug.Log("Everything is allright to start");
 
         return true;
     }
 
     bool CheckTemplatePosition()
     {
-        switch(pieceName)
+        switch (pieceName)
         {
             case "Piece.005":
                 if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
                 {
-                    Debug.Log("Colliders list or template points list for piece 005 is incomplete. Returning false");
+                    Debug.Log("[CHECKPOSITION]: Colliders list or template points list for piece 005 is incomplete. Returning false");
                     return false;
                 }
-                if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) && 
+                if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                     pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                     pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
                     return true;
@@ -106,7 +104,7 @@ public class CheckPosition : FindRightTemplate
             case "Piece.006":
                 if (pieceCollidersList.Count < 4 || templatePointsList.Count < 3)
                 {
-                    Debug.Log("Colliders list or template points list for piece 006 is incomplete. Returning false");
+                    Debug.Log("[CHECKPOSITION]: Colliders list or template points list for piece 006 is incomplete. Returning false");
                     return false;
                 }
                 if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
@@ -117,7 +115,7 @@ public class CheckPosition : FindRightTemplate
             case "Piece.007":
                 if (pieceCollidersList.Count < 5 || templatePointsList.Count < 4)
                 {
-                    Debug.Log("Colliders list or template points list for piece 006 is incomplete. Returning false");
+                    Debug.Log("[CHECKPOSITION]: Colliders list or template points list for piece 006 is incomplete. Returning false");
                     return false;
                 }
                 if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
@@ -143,7 +141,7 @@ public class CheckPosition : FindRightTemplate
 
                 break;
             default:
-                Debug.Log("Piece name not found");
+                Debug.Log("[CHECKPOSITION]: Piece name not found");
                 break;
         }
 
@@ -170,7 +168,7 @@ public class CheckPosition : FindRightTemplate
 
         if (total > 0)
         {
-            float media = (float) totalTrue / total;
+            float media = (float)totalTrue / total;
 
             if (media > 0.75f)
             {
