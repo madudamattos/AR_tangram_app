@@ -11,11 +11,7 @@ public class ControlScene : MonoBehaviour
     [SerializeField] GameObject templates;
 
     [Header("Menu Screens")]
-    [SerializeField] GameObject menu0;
-    [SerializeField] GameObject menu1;
-    [SerializeField] GameObject menu2;
-    [SerializeField] GameObject menu3;
-    [SerializeField] GameObject menu4;
+    [SerializeField] List<GameObject> menus = new List<GameObject>();
 
     private int figure = -1;
     private int mode = -1;
@@ -45,7 +41,6 @@ public class ControlScene : MonoBehaviour
     {
         if (gameloop && mode == 1)
         {
-            
             // Esperando uma peça ser selecionada
             if (waiting)
             {
@@ -53,11 +48,7 @@ public class ControlScene : MonoBehaviour
                 return;
             }
 
-            if (currentARGameObj != null)
-            {
-                Debug.Log("[CONTROLSCENE]: current ar game obj: " + currentARGameObj.name);
-            } 
-            else
+            if (currentARGameObj == null)
             {
                 Debug.Log("[CONTROLSCENE]: current ar game obj is null");
             }
@@ -66,14 +57,15 @@ public class ControlScene : MonoBehaviour
 
             if (templateFound)
             {
-                Debug.Log("Entered templatefound");
+                Debug.Log("[CONTROLSCENE]: Entered templatefound");
                 found++;
+
                 currentARGameObj.SetActive(false);
 
                 // verifica se era a ultima peça para finalizar o jogo
                 if (found >= 4)
                 {
-                    Debug.Log("GameOver");
+                    Debug.Log("[CONTROLSCENE]: GameOver");
                     gameloop = false;
                     return;
                 }
@@ -175,29 +167,35 @@ public class ControlScene : MonoBehaviour
         }
     }
 
+    public void CalibrationScreen()
+    {
+        menus[0].SetActive(false);
+        menus[1].SetActive(true);
+        this.GetComponent<Calibration>().enabled = false;
+    }
+
     public void StartScreen()
     {
-        menu0.SetActive(false);
-        menu1.SetActive(true);
+        menus[1].SetActive(false);
+        menus[2].SetActive(true);
     }
 
     public void SelectFigureScreen(int i)
     {
         figure = i;
-        menu1.SetActive(false);
-        menu2.SetActive(true);
+        menus[2].SetActive(false);
+        menus[3].SetActive(true);
     }
 
     public void SelectModeScreen(int i)
     {
         mode = i;
-        menu2.SetActive(false);
+        menus[3].SetActive(false);
         StartGame();
     }
 
     public void StartGame()
     {
-
         ResetTangramPos();
 
         ActivateFigure(figure);
@@ -216,19 +214,17 @@ public class ControlScene : MonoBehaviour
 
         } else
         {
-            menu4.SetActive(true);
+            menus[5].SetActive(true);
 
             // cameraCanvas.SetActive(true);
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
-            // ARGameObjects[1].transform.Find("Mesh").gameObject.SetActive(true);
-
             gameloop = true;
             found++;
         }
 
-        menu3.SetActive(true);
+        menus[4].SetActive(true);
     }
 
     public void ResetGame()
@@ -260,9 +256,9 @@ public class ControlScene : MonoBehaviour
         mode = -1;
 
         // Reset menus
-        menu1.SetActive(true);
-        menu2.SetActive(false);
-        menu4.SetActive(false);
+        menus[2].SetActive(true);
+        menus[3].SetActive(false);
+        menus[5].SetActive(false);
     }
 
     public void ShowHint()
