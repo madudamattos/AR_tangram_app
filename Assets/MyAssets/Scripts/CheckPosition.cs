@@ -8,21 +8,25 @@ public class CheckPosition : FindRightTemplate
 {
     // Infos about template piece 
     private GameObject mesh;
-    [SerializeField] Material highlightMaterial;
 
     // Suporting variables
     private bool templateFound = false;
     protected bool isChecking = false;
     protected Queue<bool> queue = new Queue<bool>();
+    private bool flag = false;
 
     // Infos about template Piece
+    [Header("Template Points Reference")]
     [SerializeField] List<Transform> templatePointsList = new List<Transform>();
 
     // Infos about current piece
+    [Header("Template Points Reference")]
     [SerializeField] List<Collider> pieceCollidersList = new List<Collider>();
 
-    // Suporting variables
-    private bool flag = false;
+    // Assets
+    [Header("Extra Assets")]
+    [SerializeField] private AudioSource soundPieceFound;
+    [SerializeField] Material highlightMaterial;
 
     protected override void Start()
     {
@@ -138,7 +142,7 @@ public class CheckPosition : FindRightTemplate
         }
         else
         {
-            Debug.Log("[CHECKPOSITION]: Piece name not found");
+            Debug.LogWarning($"[CHECKPOSITION]: Piece name '{pieceName}' not recognized. Returning false.");
         }
 
         return false;
@@ -171,6 +175,7 @@ public class CheckPosition : FindRightTemplate
                 base.ChangeTemplateMaterial(highlightMaterial);
                 base.ActivateTemplateMesh();
                 Invoke(nameof(ChangeTemplate), 1.0f);
+                soundPieceFound.Play();
                 templateFound = true;
             }
         }

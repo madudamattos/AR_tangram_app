@@ -33,8 +33,13 @@ public class ControlScene : MonoBehaviour
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
-    private bool waiting = true;
+    private bool waiting = false;
+    private bool meshState = true;
 
+    [Header("Extra Assets")]
+    [SerializeField] private AudioSource soundGameOver;
+    [SerializeField] private GameObject confetti;
+    [SerializeField] private Transform confettiRef;
 
     // Update is called once per frame
     void Update()
@@ -57,14 +62,17 @@ public class ControlScene : MonoBehaviour
 
             if (templateFound)
             {
+                // faz som de encaixe de peça
                 Debug.Log("[CONTROLSCENE]: Entered templatefound");
                 found++;
 
-                currentARGameObj.SetActive(false);
+                //currentARGameObj.SetActive(false);
 
                 // verifica se era a ultima peça para finalizar o jogo
-                if (found >= 4)
+                if (found > 6)
                 {
+                    // game over 
+                    Invoke(nameof(GameOver), 1.5f);
                     Debug.Log("[CONTROLSCENE]: GameOver");
                     gameloop = false;
                     return;
@@ -75,8 +83,13 @@ public class ControlScene : MonoBehaviour
 
                 Debug.Log("[CONTROLSCENE]: Set waiting = true");
             }
-        }
 
+            // Ativa e desativa o mesh das peças de acordo com o botao x do controle
+            if (OVRInput.Get(OVRInput.Button.Three)) // Mapeado para o botão 'X' no controle esquerdo
+            {
+                ChangePieceMesh();
+            }
+        }
     }
 
     public void selectPiece()
@@ -108,11 +121,11 @@ public class ControlScene : MonoBehaviour
                 Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
                 return;
             }
-
+            
             currentARGameObj = selectedObj;
             PieceDetector[index].SetActive(false);
 
-            currentARGameObj.SetActive(true);
+            // currentARGameObj.SetActive(true);
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
@@ -171,6 +184,11 @@ public class ControlScene : MonoBehaviour
     {
         menus[0].SetActive(false);
         menus[1].SetActive(true);
+
+        // Desativa o mesh renderer das peças virtuais e dos placeholders
+        // DeactivatePiecesPlaceholder();
+        // ChangePieceMesh();
+
         this.GetComponent<Calibration>().enabled = false;
     }
 
@@ -220,6 +238,7 @@ public class ControlScene : MonoBehaviour
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
+            waiting = true;
             gameloop = true;
             found++;
         }
@@ -261,9 +280,51 @@ public class ControlScene : MonoBehaviour
         menus[5].SetActive(false);
     }
 
-    public void ShowHint()
+/*    public void DeactivatePiecesMesh()
+    {        
+        for (int i = 0; i < pieces; i++)
+        {
+            Debug.Log("[CONTROL SCENE]: Entrou desativar peça");
+            PieceDetector[i].transform.Find("Mesh").GetComponent<MeshRenderer>().enabled = false;
+            //ARGameObjects[i].transform.Find("Mesh").gameObject.SetActive(false);
+        }
+    }*/
+
+    public void DeactivatePiecesPlaceholder()
     {
-        ARGameObjects[found].GetComponent<FindRightTemplate>().ActivateTemplateMesh();
+        for (int i = 0; i < PieceDetector.Length; i++)
+        {
+            Transform meshTransform = PieceDetector[i].transform.Find("Mesh");
+
+            MeshRenderer meshRenderer = meshTransform.GetComponent<MeshRenderer>();
+
+            if (meshRenderer != null)
+            {
+                meshRenderer.enabled = false;
+                Debug.Log($"[CONTROL SCENE]: MeshRenderer de {PieceDetector[i].name} desativado.");
+            }
+        }
     }
 
+
+    public void ChangePieceMesh()
+    {
+        meshState = !meshState;
+
+        for (int i = 0; i < ARGameObjects.Length; i++)
+        {
+            ARGameObjects[i].SetActive(meshState);
+        }
+    }
+
+    public void ShowHint()
+    {
+        currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh();
+    }
+
+    public void GameOver()
+    {
+        Instantiate(confetti, confettiRef.position, Quaternion.identity);
+        soundGameOver.Play();
+    }
 }

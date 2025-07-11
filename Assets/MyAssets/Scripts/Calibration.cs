@@ -19,6 +19,7 @@ public class Calibration : MonoBehaviour
     [Header("Table")]
     public GameObject piecesRef;
     public GameObject tangramRef;
+    public GameObject menuRef;
 
     // variables
     public int num = 0;
@@ -62,20 +63,19 @@ public class Calibration : MonoBehaviour
             Vector2 leftThumbstick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
 
             Vector3 movement = new Vector3(leftThumbstick.x, 0, leftThumbstick.y) * moveSpeed * Time.deltaTime;
+            
             piecesRef.transform.Translate(movement, Space.World);
             tangramRef.transform.Translate(movement, Space.World);
-
-            // Movimenta o mesh 
-            /*Vector3 movement = new Vector3(leftThumbstick.x, 0, leftThumbstick.y) * moveSpeed * Time.deltaTime;
-            mesh[num].transform.Translate(movement, Space.World);*/
+            menuRef.transform.Translate(movement, Space.World);
 
             // Rotaciona o mesh no próprio eixo Z 
             Vector2 rightThumbstick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
 
             float rotateZ = -rightThumbstick.x * horizontalRotateSpeed * Time.deltaTime;
-            /*mesh[num].transform.Rotate(Vector3.up, rotateZ, Space.World);*/
+
             piecesRef.transform.Rotate(Vector3.up, rotateZ, Space.World);
             tangramRef.transform.Rotate(Vector3.up, rotateZ, Space.World);
+            menuRef.transform.Rotate(Vector3.up, rotateZ, Space.World);
 
 
             // Sobre mesh (modo 0) / sobe mesa (modo 1)
@@ -85,6 +85,7 @@ public class Calibration : MonoBehaviour
                 {
                     // Sobe a mesa
                     Debug.Log("Subindo a mesa");
+                    menuRef.transform.localPosition += Vector3.forward * verticalMoveSpeed * Time.deltaTime;
                     piecesRef.transform.localPosition += Vector3.forward * verticalMoveSpeed * Time.deltaTime;
                     tangramRef.transform.localPosition += Vector3.forward * verticalMoveSpeed * Time.deltaTime;
                 } 
@@ -102,6 +103,7 @@ public class Calibration : MonoBehaviour
                 if (mode == 0)
                 {
                     Debug.Log("Descendo a mesa");
+                    menuRef.transform.localPosition += Vector3.back* verticalMoveSpeed * Time.deltaTime;
                     piecesRef.transform.localPosition += Vector3.back * verticalMoveSpeed * Time.deltaTime;
                     tangramRef.transform.localPosition += Vector3.back * verticalMoveSpeed * Time.deltaTime;
                 }
