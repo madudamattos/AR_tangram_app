@@ -62,11 +62,11 @@ public class ControlScene : MonoBehaviour
 
             if (templateFound)
             {
-                // faz som de encaixe de peça
                 Debug.Log("[CONTROLSCENE]: Entered templatefound");
                 found++;
 
-                //currentARGameObj.SetActive(false);
+                // Mesh
+                currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
 
                 // verifica se era a ultima peça para finalizar o jogo
                 if (found > 6)
@@ -81,6 +81,9 @@ public class ControlScene : MonoBehaviour
                 templateFound = false;
                 waiting = true;
 
+                // Mesh
+                currentARGameObj.transform.Find("Mesh").gameObject.SetActive(false);
+                    
                 Debug.Log("[CONTROLSCENE]: Set waiting = true");
             }
 
@@ -125,7 +128,8 @@ public class ControlScene : MonoBehaviour
             currentARGameObj = selectedObj;
             PieceDetector[index].SetActive(false);
 
-            // currentARGameObj.SetActive(true);
+            // Mesh
+            currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
@@ -182,14 +186,15 @@ public class ControlScene : MonoBehaviour
 
     public void CalibrationScreen()
     {
+        // Desativa o mesh renderer das peças virtuais e dos placeholders
+        ChangePieceMesh();
+        ChangePiecesPlaceholder();
+
+        // Desativa o script de calibração
+        this.GetComponent<Calibration>().enabled = false;
+
         menus[0].SetActive(false);
         menus[1].SetActive(true);
-
-        // Desativa o mesh renderer das peças virtuais e dos placeholders
-        // DeactivatePiecesPlaceholder();
-        // ChangePieceMesh();
-
-        this.GetComponent<Calibration>().enabled = false;
     }
 
     public void StartScreen()
@@ -280,17 +285,7 @@ public class ControlScene : MonoBehaviour
         menus[5].SetActive(false);
     }
 
-/*    public void DeactivatePiecesMesh()
-    {        
-        for (int i = 0; i < pieces; i++)
-        {
-            Debug.Log("[CONTROL SCENE]: Entrou desativar peça");
-            PieceDetector[i].transform.Find("Mesh").GetComponent<MeshRenderer>().enabled = false;
-            //ARGameObjects[i].transform.Find("Mesh").gameObject.SetActive(false);
-        }
-    }*/
-
-    public void DeactivatePiecesPlaceholder()
+    public void ChangePiecesPlaceholder()
     {
         for (int i = 0; i < PieceDetector.Length; i++)
         {
@@ -300,7 +295,7 @@ public class ControlScene : MonoBehaviour
 
             if (meshRenderer != null)
             {
-                meshRenderer.enabled = false;
+                meshRenderer.enabled = meshState;
                 Debug.Log($"[CONTROL SCENE]: MeshRenderer de {PieceDetector[i].name} desativado.");
             }
         }
@@ -313,7 +308,7 @@ public class ControlScene : MonoBehaviour
 
         for (int i = 0; i < ARGameObjects.Length; i++)
         {
-            ARGameObjects[i].SetActive(meshState);
+            ARGameObjects[i].transform.Find("Mesh").gameObject.SetActive(meshState);
         }
     }
 

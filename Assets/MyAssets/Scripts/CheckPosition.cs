@@ -110,7 +110,7 @@ public class CheckPosition : FindRightTemplate
         else if(pieceName == "Piece.004")
         {
             if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
-                pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
+                pieceCollidersList[3].bounds.Contains(templatePointsList[3].position) &&
                 pieceCollidersList[3].bounds.Contains(templatePointsList[3].position) &&
                 pieceCollidersList[4].bounds.Contains(templatePointsList[4].position))
                 return true;
