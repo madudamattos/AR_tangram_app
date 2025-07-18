@@ -37,6 +37,7 @@ public class ControlScene : MonoBehaviour
     private bool meshState = true;
 
     [Header("Extra Assets")]
+    [SerializeField] private AudioSource soundHint;
     [SerializeField] private AudioSource soundGameOver;
     [SerializeField] private GameObject confetti;
     [SerializeField] private Transform confettiRef;
@@ -66,7 +67,7 @@ public class ControlScene : MonoBehaviour
                 found++;
 
                 // Mesh
-                currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
+               //currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
 
                 // verifica se era a ultima peça para finalizar o jogo
                 if (found > 6)
@@ -82,7 +83,7 @@ public class ControlScene : MonoBehaviour
                 waiting = true;
 
                 // Mesh
-                currentARGameObj.transform.Find("Mesh").gameObject.SetActive(false);
+                //currentARGameObj.transform.Find("Mesh").gameObject.SetActive(false);
                     
                 Debug.Log("[CONTROLSCENE]: Set waiting = true");
             }
@@ -129,7 +130,7 @@ public class ControlScene : MonoBehaviour
             PieceDetector[index].SetActive(false);
 
             // Mesh
-            currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
+            // currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
@@ -315,6 +316,7 @@ public class ControlScene : MonoBehaviour
     public void ShowHint()
     {
         currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh();
+        soundHint.Play();
     }
 
     public void GameOver()
