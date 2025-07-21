@@ -70,7 +70,7 @@ public class ControlScene : MonoBehaviour
                //currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
 
                 // verifica se era a ultima peça para finalizar o jogo
-                if (found > 6)
+                if (found > 7)
                 {
                     // game over 
                     Invoke(nameof(GameOver), 1.5f);
@@ -88,11 +88,6 @@ public class ControlScene : MonoBehaviour
                 Debug.Log("[CONTROLSCENE]: Set waiting = true");
             }
 
-            // Ativa e desativa o mesh das peças de acordo com o botao x do controle
-            if (OVRInput.Get(OVRInput.Button.Three)) // Mapeado para o botão 'X' no controle esquerdo
-            {
-                ChangePieceMesh();
-            }
         }
     }
 
