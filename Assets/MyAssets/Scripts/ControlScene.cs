@@ -48,34 +48,20 @@ public class ControlScene : MonoBehaviour
     {
         if (gameloop && mode == 1)
         {
-            // Esperando uma peça ser selecionada
-/*            if (waiting)
-            {
-                selectPiece();
-                return;
-            }*/
-
             selectPiece();
 
-            if (currentARGameObj == null)
-            {
-                Debug.Log("[CONTROLSCENE]: current ar game obj is null");
-            }
+            if (currentARGameObj == null) Debug.Log("[CONTROLSCENE]: current ar game obj is null");
 
-            templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
+            if (!waiting) templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
 
             if (templateFound)
             {
                 Debug.Log("[CONTROLSCENE]: Entered templatefound");
                 found++;
 
-                // Mesh
-               //currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
-
-                // verifica se era a ultima peça para finalizar o jogo
+                // game over 
                 if (found > 7)
                 {
-                    // game over 
                     Invoke(nameof(GameOver), 1.5f);
                     Debug.Log("[CONTROLSCENE]: GameOver");
                     gameloop = false;
@@ -86,9 +72,6 @@ public class ControlScene : MonoBehaviour
 
                 templateFound = false;
                 waiting = true;
-
-                // Mesh
-                //currentARGameObj.transform.Find("Mesh").gameObject.SetActive(false);
                     
                 Debug.Log("[CONTROLSCENE]: Set waiting = true");
             }
@@ -126,9 +109,6 @@ public class ControlScene : MonoBehaviour
             }
             
             currentARGameObj = selectedObj;
-
-            // Mesh
-            // currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
