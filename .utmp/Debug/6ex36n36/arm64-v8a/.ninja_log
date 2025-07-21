@@ -21,3 +21,5 @@
 34	1207	7748333326940628	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
 1	1230	7748333327171958	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
 1230	1328	7748333328156413	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e
+10	278	7748353935722634	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
+278	429	7748353937244309	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3

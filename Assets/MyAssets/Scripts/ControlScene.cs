@@ -102,12 +102,12 @@ public class ControlScene : MonoBehaviour
             selectedObj = ARGameObjects[index];
 
             // Verificação para não repetir o mesmo objeto
-            if (selectedObj == currentARGameObj || selectedObj == null)
+            /*if (selectedObj == currentARGameObj || selectedObj == null)
             {
                 Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
                 return;
-            }
-            
+            }*/
+
             currentARGameObj = selectedObj;
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
