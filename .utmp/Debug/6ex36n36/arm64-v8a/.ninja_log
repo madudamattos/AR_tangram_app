@@ -1,23 +1,23 @@
 # ninja log v5
-10	2122	7742138232525060	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
-81	570	7742138217000860	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
-570	829	7742138219549891	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
-51	1940	7742138230655807	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
-35	1937	7742138230634501	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
-71	1971	7742138231002600	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
-28	1977	7742138231068174	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
-20	1920	7742138230488906	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
-61	1975	7742138231043009	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
-43	2089	7742138232175429	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
-2122	2220	7742138233525613	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e
+17	2392	7745537508237901	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
 92	648	7745537490855606	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
 649	959	7745537493947509	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
-23	2155	7745537505762322	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
 71	2158	7745537505837573	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
 43	2186	7745537506193997	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
+32	2217	7745537506525880	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
 53	2192	7745537506234106	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
 61	2214	7745537506480718	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
-32	2217	7745537506525880	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
+23	2155	7745537505762322	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
 81	2343	7745537507805949	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
-17	2392	7745537508237901	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
 2393	2502	7745537509377092	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e
+54	216	7748333317036638	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
+217	350	7748333318350714	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
+23	1083	7748333325679337	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
+40	1084	7748333325684378	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
+6	1086	7748333325654245	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
+29	1093	7748333325785671	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
+15	1116	7748333326042189	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
+46	1117	7748333326047293	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
+34	1207	7748333326940628	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
+1	1230	7748333327171958	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
+1230	1328	7748333328156413	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e

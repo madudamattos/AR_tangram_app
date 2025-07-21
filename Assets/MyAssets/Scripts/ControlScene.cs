@@ -35,6 +35,7 @@ public class ControlScene : MonoBehaviour
     private int found = 0;
     private bool waiting = false;
     private bool meshState = true;
+    private int index = -1;
 
     [Header("Extra Assets")]
     [SerializeField] private AudioSource soundHint;
@@ -48,11 +49,13 @@ public class ControlScene : MonoBehaviour
         if (gameloop && mode == 1)
         {
             // Esperando uma peça ser selecionada
-            if (waiting)
+/*            if (waiting)
             {
                 selectPiece();
                 return;
-            }
+            }*/
+
+            selectPiece();
 
             if (currentARGameObj == null)
             {
@@ -79,6 +82,8 @@ public class ControlScene : MonoBehaviour
                     return;
                 }
 
+                PieceDetector[index].SetActive(false);
+
                 templateFound = false;
                 waiting = true;
 
@@ -98,7 +103,6 @@ public class ControlScene : MonoBehaviour
         if (col != "")
         {
             GameObject selectedObj = null;
-            int index = -1;
 
             switch (col)
             {
@@ -122,7 +126,6 @@ public class ControlScene : MonoBehaviour
             }
             
             currentARGameObj = selectedObj;
-            PieceDetector[index].SetActive(false);
 
             // Mesh
             // currentARGameObj.transform.Find("Mesh").gameObject.SetActive(true);
