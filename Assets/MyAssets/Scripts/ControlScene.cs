@@ -136,38 +136,36 @@ public class ControlScene : MonoBehaviour
 
     public void ActivateFigure(int index)
     {
-        if (index == 0)
+        for (int i = 1; i < templates.transform.childCount; i++)
         {
-            templates.transform.GetChild(0).gameObject.SetActive(true);
-            templates.transform.GetChild(1).gameObject.SetActive(false);
-            templates.transform.GetChild(2).gameObject.SetActive(false);
+            templates.transform.GetChild(i).gameObject.SetActive(i == index);
         }
-        else if (index == 1)
+
+        // coloca os templates no lugar da figura
+
+        GameObject templateRef = templates.transform.GetChild(0).gameObject;
+        GameObject templateChoose = templates.transform.GetChild(index).gameObject;
+
+        templateRef.transform.position = templateChoose.transform.position;
+        templateRef.transform.rotation = templateChoose.transform.rotation;
+        templateRef.transform.localScale = templateChoose.transform.localScale;
+
+        int count = templateChoose.transform.childCount;
+
+        for (int i = 1; i < count; i++)
         {
-            templates.transform.GetChild(1).gameObject.SetActive(true);
-            templates.transform.GetChild(0).gameObject.SetActive(false);
-            templates.transform.GetChild(2).gameObject.SetActive(false);
+            templateRef.transform.GetChild(i).transform.position = templateChoose.transform.GetChild(i).transform.position;
+            templateRef.transform.GetChild(i).transform.rotation = templateChoose.transform.GetChild(i).transform.rotation;
+            templateRef.transform.GetChild(i).transform.localScale = templateChoose.transform.GetChild(i).transform.localScale;
         }
-        else if (index == 2)
-        {
-            templates.transform.GetChild(2).gameObject.SetActive(true);
-            templates.transform.GetChild(0).gameObject.SetActive(false);
-            templates.transform.GetChild(1).gameObject.SetActive(false);
-        }
-        else
-        {
-            // Deactivate all
-            templates.transform.GetChild(2).gameObject.SetActive(false);
-            templates.transform.GetChild(0).gameObject.SetActive(false);
-            templates.transform.GetChild(1).gameObject.SetActive(false);
-        }
+
     }
 
     public void CalibrationScreen()
     {
         // Desativa o mesh renderer das peças virtuais e dos placeholders
-        ChangePieceMesh();
-        ChangePiecesPlaceholder();
+        // ChangePieceMesh();
+        // ChangePiecesPlaceholder();
 
         // Desativa o script de calibração
         this.GetComponent<Calibration>().enabled = false;

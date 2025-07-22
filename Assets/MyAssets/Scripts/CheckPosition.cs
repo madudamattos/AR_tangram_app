@@ -31,14 +31,14 @@ public class CheckPosition : FindRightTemplate
     protected override void Start()
     {
         base.Start();
-        pieceName = this.gameObject.name;
+        pieceName = base.pieceName;
     }
 
     void Update()
     {
         if (!VerifyStartConditions())
         {
-            //Debug.Log("[CHECKPOSITION]: Start conditions did not match. Returning.");
+            Debug.Log("[CHECKPOSITION]: Start conditions did not match. Returning.");
             return;
         }
 
@@ -81,14 +81,37 @@ public class CheckPosition : FindRightTemplate
             return false;
         }
 
-        if (templatePointsList == null)
+        if (templatePointsList == null || templatePointsList.Count == 0)
         {
-            Debug.Log("[CHECKPOSITION]: Template points list is null");
+            Debug.Log("[CHECKPOSITION]: Template points list is null or empty");
             return false;
         }
 
         return true;
     }
+
+/*    private void GetTemplatePoints()
+    {
+        if (base.templatePiece == null)
+        {
+            Debug.LogError("[CHECKPOSITION]: Tentativa de obter pontos de um template nulo!");
+            return;
+        }
+
+        templatePointsList.Clear();
+
+        foreach (Transform child in base.templatePiece.transform)
+        {
+            if (child.gameObject.name.Contains("ProximitySensor"))
+            {
+                templatePointsList.Add(child);
+            }
+        }
+
+        *//*        Debug.Log($"[CHECKPOSITION]: Encontrado(s) {templatePointsList.Count} ponto(s) para o template {base.templatePiece.name}.");*//*
+
+        return;
+    }*/
 
     bool CheckTemplatePosition()
     {
@@ -98,19 +121,19 @@ public class CheckPosition : FindRightTemplate
             return false;
         }
 
-        if(pieceName == "Piece.001" || pieceName == "Piece.002" || pieceName == "Piece.005" || pieceName == "Piece.003" || pieceName == "Piece.006" )
+        if (pieceName == "Piece.001" || pieceName == "Piece.002" || pieceName == "Piece.005" || pieceName == "Piece.003" || pieceName == "Piece.006")
         {
-            if(pieceCollidersList[1].bounds.Contains(templatePointsList[1].position)  &&
-               pieceCollidersList[2].bounds.Contains(templatePointsList[2].position)  &&
+            if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
+               pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
                 return true;
-            else if(pieceCollidersList[1].bounds.Contains(templatePointsList[1].position)  &&
-                    pieceCollidersList[3].bounds.Contains(templatePointsList[2].position)  &&
-                    pieceCollidersList[2].bounds.Contains(templatePointsList[3].position)) 
+            else if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
+                    pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
+                    pieceCollidersList[2].bounds.Contains(templatePointsList[3].position))
                 return true;
             return false;
         }
-        else if(pieceName == "Piece.004")
+        else if (pieceName == "Piece.004")
         {
             if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                 pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
@@ -124,7 +147,7 @@ public class CheckPosition : FindRightTemplate
                 return true;
             return false;
         }
-        else if(pieceName == "Piece.007")
+        else if (pieceName == "Piece.007")
         {
             if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                 pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
@@ -155,6 +178,7 @@ public class CheckPosition : FindRightTemplate
 
         return false;
     }
+
 
     protected IEnumerator IsSamePosition()
     {
