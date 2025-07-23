@@ -15,6 +15,9 @@ public class CheckPosition : FindRightTemplate
     protected Queue<bool> queue = new Queue<bool>();
     private bool flag = false;
 
+    // Scripts
+    [SerializeField] ControlScene _controlScene;
+
     // Infos about template Piece
     [Header("Template Points Reference")]
     [SerializeField] List<Transform> templatePointsList = new List<Transform>();
@@ -38,7 +41,7 @@ public class CheckPosition : FindRightTemplate
     {
         if (!VerifyStartConditions())
         {
-            Debug.Log("[CHECKPOSITION]: Start conditions did not match. Returning.");
+            // Debug.Log("[CHECKPOSITION]: Start conditions did not match. Returning.");
             return;
         }
 
@@ -58,6 +61,7 @@ public class CheckPosition : FindRightTemplate
 
     bool VerifyStartConditions()
     {
+        if (_controlScene.GetGameLoop() == false) return false;
         if (templateFound) return false;
 
         // verifing variables
@@ -89,29 +93,6 @@ public class CheckPosition : FindRightTemplate
 
         return true;
     }
-
-/*    private void GetTemplatePoints()
-    {
-        if (base.templatePiece == null)
-        {
-            Debug.LogError("[CHECKPOSITION]: Tentativa de obter pontos de um template nulo!");
-            return;
-        }
-
-        templatePointsList.Clear();
-
-        foreach (Transform child in base.templatePiece.transform)
-        {
-            if (child.gameObject.name.Contains("ProximitySensor"))
-            {
-                templatePointsList.Add(child);
-            }
-        }
-
-        *//*        Debug.Log($"[CHECKPOSITION]: Encontrado(s) {templatePointsList.Count} ponto(s) para o template {base.templatePiece.name}.");*//*
-
-        return;
-    }*/
 
     bool CheckTemplatePosition()
     {
@@ -179,7 +160,6 @@ public class CheckPosition : FindRightTemplate
         return false;
     }
 
-
     protected IEnumerator IsSamePosition()
     {
         isChecking = true;
@@ -216,6 +196,11 @@ public class CheckPosition : FindRightTemplate
     public bool TemplateFound()
     {
         return templateFound;
+    }
+
+    public void SetTemplateFound(bool state)
+    { 
+        templateFound = state; 
     }
 
     // Template set back its original material

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CheckCollision : MonoBehaviour
+public class CheckCollisionRight : MonoBehaviour
 {
     private string colliderName = "";
 

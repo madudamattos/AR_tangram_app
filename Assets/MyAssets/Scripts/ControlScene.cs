@@ -26,7 +26,9 @@ public class ControlScene : MonoBehaviour
     [SerializeField] GameObject[] ARGameObjects = new GameObject[7];
 
     [Header("Piece Detectors")]
-    [SerializeField] CheckCollision _checkCollision;
+    [SerializeField] CheckCollisionRight _checkCollisionRight;
+    [SerializeField] CheckCollisionLeft _checkCollisionLeft;
+
     [SerializeField] GameObject[] PieceDetector = new GameObject[7];
     private GameObject currentARGameObj = null;
 
@@ -81,7 +83,10 @@ public class ControlScene : MonoBehaviour
 
     public void selectPiece()
     {
-        string col = _checkCollision.GetCollision();
+        string col_r = _checkCollisionRight.GetCollision();
+        string col_l = _checkCollisionLeft.GetCollision();
+
+        string col = (col_r != "") ? col_r : col_l;
 
         if (col != "")
         {
@@ -102,11 +107,11 @@ public class ControlScene : MonoBehaviour
             selectedObj = ARGameObjects[index];
 
             // Verificação para não repetir o mesmo objeto
-            /*if (selectedObj == currentARGameObj || selectedObj == null)
+            if (selectedObj == currentARGameObj || selectedObj == null)
             {
                 Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
                 return;
-            }*/
+            }
 
             currentARGameObj = selectedObj;
             waiting = false;
@@ -164,8 +169,8 @@ public class ControlScene : MonoBehaviour
     public void CalibrationScreen()
     {
         // Desativa o mesh renderer das peças virtuais e dos placeholders
-        // ChangePieceMesh();
-        // ChangePiecesPlaceholder();
+        ChangePieceMesh();
+        ChangePiecesPlaceholder();
 
         // Desativa o script de calibração
         this.GetComponent<Calibration>().enabled = false;
@@ -246,19 +251,32 @@ public class ControlScene : MonoBehaviour
         tangram.SetActive(false);
 
         // Reset AR tangram
- /*       for (int i = 0; i < ARGameObjects.Length; i++)
+        for (int i = 0; i < ARGameObjects.Length; i++)
         {
             ARGameObjects[i].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(null);
             ARGameObjects[i].GetComponent<FindRightTemplate>().DeactivateTemplateMesh();
-        }*/
+            ARGameObjects[i].GetComponent<CheckPosition>().SetTemplateFound(false);
+        }        
+    
+        // Reativate piece placeholders
+        for (int i = 0; i < ARGameObjects.Length; i++)
+        {
+            PieceDetector[i].SetActive(false);
+        }
 
         // Reset variables
         figure = -1;
         mode = -1;
+        found = 0;
+        waiting = false;
+        gameloop = false;
+        currentARGameObj = null;
+
 
         // Reset menus
         menus[2].SetActive(true);
         menus[3].SetActive(false);
+        menus[4].SetActive(false);
         menus[5].SetActive(false);
     }
 
@@ -299,5 +317,10 @@ public class ControlScene : MonoBehaviour
     {
         Instantiate(confetti, confettiRef.position, Quaternion.identity);
         soundGameOver.Play();
+    }
+
+    public bool GetGameLoop()
+    {
+        return gameloop;
     }
 }
