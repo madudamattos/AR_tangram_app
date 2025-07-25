@@ -12,19 +12,24 @@ public class CheckPosition : FindRightTemplate
     // Suporting variables
     private bool templateFound = false;
     protected bool isChecking = false;
-    protected Queue<bool> queue = new Queue<bool>();
-    private bool flag = false;
+    protected Queue<int> queue = new Queue<int>();
+    private int flag = 0;
 
     // Scripts
     [SerializeField] ControlScene _controlScene;
+
+
+    // Infos about current piece
+    [Header("Piece Sensors Reference")]
+    [SerializeField] List<Collider> pieceCollidersList = new List<Collider>();
 
     // Infos about template Piece
     [Header("Template Points Reference")]
     [SerializeField] List<Transform> templatePointsList = new List<Transform>();
 
-    // Infos about current piece
-    [Header("Template Points Reference")]
-    [SerializeField] List<Collider> pieceCollidersList = new List<Collider>();
+    [Header("Optional Template Points Reference")]
+    [SerializeField] List<Transform> optionalTemplatePoints = new List<Transform>();
+
 
     // Assets
     [Header("Extra Assets")]
@@ -48,9 +53,9 @@ public class CheckPosition : FindRightTemplate
         // Game loop
         flag = CheckTemplatePosition();
 
-        if (flag && !isChecking)
+        if (flag != 0 && !isChecking)
         {
-            StartCoroutine(IsSamePosition());
+            StartCoroutine(IsSamePosition(flag));
         }
 
         if (isChecking)
@@ -94,12 +99,13 @@ public class CheckPosition : FindRightTemplate
         return true;
     }
 
-    bool CheckTemplatePosition()
+    // 0 = não achou nada / 1 = achou posicao default / 2 = achou posicao secundaria
+    int CheckTemplatePosition()
     {
         if (pieceCollidersList.Count < 4 || templatePointsList.Count < 4)
         {
             Debug.Log("[CHECKPOSITION]: Colliders list or template points list for piece 005 is incomplete. Returning false");
-            return false;
+            return 0;
         }
 
         if (pieceName == "Piece.001" || pieceName == "Piece.002" || pieceName == "Piece.005" || pieceName == "Piece.003" || pieceName == "Piece.006")
@@ -107,12 +113,24 @@ public class CheckPosition : FindRightTemplate
             if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
-                return true;
+                return 1;
             else if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
                     pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
                     pieceCollidersList[2].bounds.Contains(templatePointsList[3].position))
-                return true;
-            return false;
+                return 1;
+            // peça 2 não tem posição opcional
+            if (optionalTemplatePoints.Count != 0)
+            {
+                if (pieceCollidersList[1].bounds.Contains(optionalTemplatePoints[1].position) &&
+                    pieceCollidersList[2].bounds.Contains(optionalTemplatePoints[2].position) &&
+                    pieceCollidersList[3].bounds.Contains(optionalTemplatePoints[3].position))
+                    return 2;
+                else if (pieceCollidersList[1].bounds.Contains(optionalTemplatePoints[1].position) &&
+                         pieceCollidersList[3].bounds.Contains(optionalTemplatePoints[2].position) &&
+                         pieceCollidersList[2].bounds.Contains(optionalTemplatePoints[3].position))
+                    return 2;
+            }
+            return 0;
         }
         else if (pieceName == "Piece.004")
         {
@@ -120,13 +138,13 @@ public class CheckPosition : FindRightTemplate
                 pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                 pieceCollidersList[3].bounds.Contains(templatePointsList[3].position) &&
                 pieceCollidersList[4].bounds.Contains(templatePointsList[4].position))
-                return true;
+                return 1;
             else if (pieceCollidersList[3].bounds.Contains(templatePointsList[1].position) &&
                      pieceCollidersList[4].bounds.Contains(templatePointsList[2].position) &&
                      pieceCollidersList[1].bounds.Contains(templatePointsList[3].position) &&
                      pieceCollidersList[2].bounds.Contains(templatePointsList[4].position))
-                return true;
-            return false;
+                return 1;
+            return 0;
         }
         else if (pieceName == "Piece.007")
         {
@@ -134,33 +152,33 @@ public class CheckPosition : FindRightTemplate
                 pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
                 pieceCollidersList[3].bounds.Contains(templatePointsList[3].position) &&
                 pieceCollidersList[4].bounds.Contains(templatePointsList[4].position))
-                return true;
+                return 1;
             else if (pieceCollidersList[4].bounds.Contains(templatePointsList[1].position) &&
                      pieceCollidersList[1].bounds.Contains(templatePointsList[2].position) &&
                      pieceCollidersList[2].bounds.Contains(templatePointsList[3].position) &&
                      pieceCollidersList[3].bounds.Contains(templatePointsList[4].position))
-                return true;
+                return 1;
             else if (pieceCollidersList[3].bounds.Contains(templatePointsList[1].position) &&
                      pieceCollidersList[4].bounds.Contains(templatePointsList[2].position) &&
                      pieceCollidersList[1].bounds.Contains(templatePointsList[3].position) &&
                      pieceCollidersList[2].bounds.Contains(templatePointsList[4].position))
-                return true;
+                return 1;
             else if (pieceCollidersList[2].bounds.Contains(templatePointsList[1].position) &&
                      pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
                      pieceCollidersList[4].bounds.Contains(templatePointsList[3].position) &&
                      pieceCollidersList[1].bounds.Contains(templatePointsList[4].position))
-                return true;
-            return false;
+                return 1;
+            return 0;
         }
         else
         {
             Debug.LogWarning($"[CHECKPOSITION]: Piece name '{pieceName}' not recognized. Returning false.");
         }
 
-        return false;
+        return 0;
     }
 
-    protected IEnumerator IsSamePosition()
+    protected IEnumerator IsSamePosition(int flag)
     {
         isChecking = true;
 
@@ -173,9 +191,9 @@ public class CheckPosition : FindRightTemplate
 
         while (queue.Count > 0)
         {
-            bool item = queue.Dequeue();
+            int item = queue.Dequeue();
             total++;
-            if (item) totalTrue++;
+            if (item != 0) totalTrue++;
         }
 
         if (total > 0)
@@ -185,7 +203,7 @@ public class CheckPosition : FindRightTemplate
             if (media > 0.75f)
             {
                 base.ChangeTemplateMaterial(highlightMaterial);
-                base.ActivateTemplateMesh();
+                base.ActivateTemplateMesh(flag);
                 Invoke(nameof(ChangeTemplate), 1.0f);
                 soundPieceFound.Play();
                 templateFound = true;

@@ -25,6 +25,9 @@ public class ControlScene : MonoBehaviour
     [Header("AR Pieces")]
     [SerializeField] GameObject[] ARGameObjects = new GameObject[7];
 
+    [Header("EqualPieces")]
+    [SerializeField] List<GameObject> equalPieces = new List<GameObject>();
+
     [Header("Piece Detectors")]
     [SerializeField] CheckCollisionRight _checkCollisionRight;
     [SerializeField] CheckCollisionLeft _checkCollisionLeft;
@@ -164,6 +167,27 @@ public class ControlScene : MonoBehaviour
             templateRef.transform.GetChild(i).transform.localScale = templateChoose.transform.GetChild(i).transform.localScale;
         }
 
+        // coloca mesh_2 no lugar 
+        int gap = equalPieces.Count / 2;
+        
+        for (int i = 0; i < gap; i++)
+        {
+            Debug.Log("Gap:" + gap);
+
+            GameObject mesh_1 = equalPieces[i].GetComponent<FindRightTemplate>().GetTemplateMesh();
+
+            Debug.Log(equalPieces[i]);
+            Debug.Log(mesh_1);
+
+            GameObject mesh_2 = equalPieces[i + gap].GetComponent<FindRightTemplate>().GetTemplateMesh();
+
+            Debug.Log(equalPieces[i + gap]);
+            Debug.Log(mesh_2);
+
+            equalPieces[i + gap].GetComponent<FindRightTemplate>().SetTemplateMeshTransform(mesh_1.transform, 2);
+            equalPieces[i].GetComponent<FindRightTemplate>().SetTemplateMeshTransform(mesh_2.transform, 2);
+        }
+
     }
 
     public void CalibrationScreen()
@@ -177,7 +201,7 @@ public class ControlScene : MonoBehaviour
 
         menus[0].SetActive(false);
         menus[1].SetActive(true);
-    }
+    } 
 
     public void StartScreen()
     {
@@ -307,9 +331,45 @@ public class ControlScene : MonoBehaviour
         }
     }
 
+    public GameObject GetCorrespondentPiece(GameObject obj)
+    {
+        int i;
+
+        int gap = equalPieces.Count / 2;
+
+        // encontra a peça na lista
+        for(i=0; i<equalPieces.Count; i++)
+        {
+            if (equalPieces[i] == obj) break;
+        }
+
+        // retorna correspondente
+        if(i<gap)
+        {
+            return equalPieces[i + gap];
+        } 
+        else
+        {
+            return equalPieces[i - gap];
+        }
+    }
+
     public void ShowHint()
     {
-        currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh();
+        GameObject correspondentPiece = GetCorrespondentPiece(currentARGameObj);
+
+        // verifica se a peça correspondente ja ocupou o lugar do mesh_1
+        bool isMesh_1active = correspondentPiece.GetComponent<FindRightTemplate>().GetTemplateMeshActive(2);
+
+        if (isMesh_1active)
+        {
+            currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh(2);
+        }
+        else
+        {
+            currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh(1);
+        }
+        
         soundHint.Play();
     }
 
