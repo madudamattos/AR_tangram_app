@@ -261,41 +261,45 @@ public class ControlScene : MonoBehaviour
     {
         ActivateFigure(-1);
 
-        ResetTangramPos();
-
         int pieces = tangram.transform.childCount;
 
-        // Reset individual pieces 
-        for (int i = 0; i < pieces; i++)
+        if (mode == 0)
         {
-            tangram.transform.GetChild(i).gameObject.GetComponent<Rigidbody>().isKinematic = false;
-            tangram.transform.GetChild(i).gameObject.SetActive(false);
+            // Reset individual pieces 
+            for (int i = 0; i < pieces; i++)
+            {
+                tangram.transform.GetChild(i).gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                tangram.transform.GetChild(i).gameObject.SetActive(false);
+            }
+
+            tangram.SetActive(false);
+
+            ResetTangramPos();
         }
-
-        tangram.SetActive(false);
-
-        // Reset AR tangram
-        for (int i = 0; i < ARGameObjects.Length; i++)
+        else
         {
-            ARGameObjects[i].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(null);
-            ARGameObjects[i].GetComponent<FindRightTemplate>().DeactivateTemplateMesh();
-            ARGameObjects[i].GetComponent<CheckPosition>().SetTemplateFound(false);
-        }        
-    
-        // Reativate piece placeholders
-        for (int i = 0; i < ARGameObjects.Length; i++)
-        {
-            PieceDetector[i].SetActive(false);
+            // Reset AR tangram
+            for (int i = 0; i < ARGameObjects.Length; i++)
+            {
+                ARGameObjects[i].GetComponent<FindRightTemplate>().ChangeTemplateMaterial(null);
+                ARGameObjects[i].GetComponent<FindRightTemplate>().DeactivateTemplateMesh();
+                ARGameObjects[i].GetComponent<CheckPosition>().SetTemplateFound(false);
+            }
+
+            // Reativate piece placeholders
+            for (int i = 0; i < ARGameObjects.Length; i++)
+            {
+                PieceDetector[i].SetActive(false);
+            }
         }
 
         // Reset variables
-        figure = -1;
-        mode = -1;
         found = 0;
         waiting = false;
         gameloop = false;
         currentARGameObj = null;
-
+        figure = -1;
+        mode = -1;
 
         // Reset menus
         menus[2].SetActive(true);

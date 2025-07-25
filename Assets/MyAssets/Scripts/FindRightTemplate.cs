@@ -38,8 +38,12 @@ public class FindRightTemplate : MonoBehaviour
         Renderer templateRenderer = this.templatePiece.transform.Find("Mesh_1").gameObject.GetComponent<Renderer>();
         templateRenderer.material = mat ? mat : originalMat;
 
-        templateRenderer = this.templatePiece.transform.Find("Mesh_2").gameObject.GetComponent<Renderer>();
-        templateRenderer.material = mat ? mat : originalMat;
+
+        if (this.templatePiece.transform.Find("Mesh_2") != null)
+        {
+            templateRenderer = this.templatePiece.transform.Find("Mesh_2").gameObject.GetComponent<Renderer>();
+            templateRenderer.material = mat ? mat : originalMat;
+        }
     }
 
     public void ActivateTemplateMesh(int meshNumber = 1)
@@ -58,7 +62,11 @@ public class FindRightTemplate : MonoBehaviour
     public void DeactivateTemplateMesh()
     {
        this.templatePiece.transform.Find("Mesh_1").gameObject.GetComponent<MeshRenderer>().enabled = false;
-        this.templatePiece.transform.Find("Mesh_2").gameObject.GetComponent<MeshRenderer>().enabled = false;
+       
+       if(this.templatePiece.transform.Find("Mesh_2") != null)
+       {
+            this.templatePiece.transform.Find("Mesh_2").gameObject.GetComponent<MeshRenderer>().enabled = false;
+       }
     }
     
     public bool GetTemplateMeshActive(int meshNumber = 1)
