@@ -66,6 +66,8 @@ public class ControlScene : MonoBehaviour
                 Debug.Log("[CONTROLSCENE]: Entered templatefound");
                 found++;
 
+                Debug.Log("Found: " + found);
+                
                 // game over 
                 if (found > 7)
                 {
@@ -119,6 +121,7 @@ public class ControlScene : MonoBehaviour
             }
 
             currentARGameObj = selectedObj;
+
             waiting = false;
             Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
@@ -293,7 +296,7 @@ public class ControlScene : MonoBehaviour
         // Reset variables
         found = 0;
         waiting = false;
-        gameloop = false;
+        gameloop = true;
         currentARGameObj = null;
         figure = -1;
         mode = -1;
