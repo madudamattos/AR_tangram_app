@@ -206,13 +206,6 @@ public class ControlScene : MonoBehaviour
     public void StartScreen()
     {
         menus[1].SetActive(false);
-        menus[2].SetActive(true);
-    }
-
-    public void SelectFigureScreen(int i)
-    {
-        figure = i;
-        menus[2].SetActive(false);
         menus[3].SetActive(true);
     }
 
@@ -220,6 +213,13 @@ public class ControlScene : MonoBehaviour
     {
         mode = i;
         menus[3].SetActive(false);
+        menus[2].SetActive(true);
+    }
+
+    public void SelectFigureScreen(int i)
+    {
+        figure = i;
+        menus[2].SetActive(false);
         StartGame();
     }
 
@@ -243,7 +243,7 @@ public class ControlScene : MonoBehaviour
 
         } else
         {
-            menus[5].SetActive(true);
+            if(mode == 1) menus[5].SetActive(true);
 
             // cameraCanvas.SetActive(true);
             arucoTracking.SetActive(true);
