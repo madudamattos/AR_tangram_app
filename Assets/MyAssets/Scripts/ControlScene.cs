@@ -35,6 +35,8 @@ public class ControlScene : MonoBehaviour
     [SerializeField] GameObject[] PieceDetector = new GameObject[7];
     private GameObject currentARGameObj = null;
 
+    [SerializeField] GameObject meshDebug;
+
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
@@ -322,6 +324,8 @@ public class ControlScene : MonoBehaviour
                 Debug.Log($"[CONTROL SCENE]: MeshRenderer de {PieceDetector[i].name} desativado.");
             }
         }
+
+        meshDebug.SetActive(meshState);
     }
 
 
