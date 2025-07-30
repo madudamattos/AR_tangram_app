@@ -12604,9 +12604,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475401877}
   serializedVersion: 2
-  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0.0000027418137}
-  m_LocalPosition: {x: 0, y: 3.0500004, z: -0.39000005}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -19.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1823954005}
@@ -21510,7 +21510,7 @@ Transform:
   - {fileID: 1195936558}
   - {fileID: 2084003793}
   - {fileID: 865757518}
-  - {fileID: 1521557059}
+  - {fileID: 1325396563}
   - {fileID: 1648046069}
   - {fileID: 1391698477}
   m_Father: {fileID: 37537594}
@@ -22526,6 +22526,37 @@ Transform:
   - {fileID: 1704758000}
   m_Father: {fileID: 277251203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &851908345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851908346}
+  m_Layer: 0
+  m_Name: Ref.005
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &851908346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851908345}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.0000014454126, y: -0.0000016540289, z: 0.00000010430813, w: 1}
+  m_LocalPosition: {x: 0, y: 2.008843, z: 0.17410496}
+  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1446155388}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &854844221
 GameObject:
   m_ObjectHideFlags: 0
@@ -22723,7 +22754,7 @@ Transform:
   m_GameObject: {fileID: 862118972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -19.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26222,12 +26253,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968159573}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.000001475215, y: -0.000001385808, z: -0.000000029802322, w: 1}
+  m_LocalPosition: {x: 0, y: 1.0809795, z: 1.3099998}
+  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 986105290}
+  - {fileID: 1579189626}
   - {fileID: 1772115162}
   - {fileID: 1778558637}
   - {fileID: 1794853440}
@@ -26748,115 +26779,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1371223973}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &986105289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 986105290}
-  - component: {fileID: 986105293}
-  - component: {fileID: 986105292}
-  - component: {fileID: 986105291}
-  m_Layer: 0
-  m_Name: Mesh_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &986105290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986105289}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.7071058, y: 0.000000089406974, z: -0.7071078, w: -0.0000021085145}
-  m_LocalPosition: {x: 0, y: -0.003, z: -1.94}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 968159574}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 180}
---- !u!64 &986105291
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986105289}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1118531500694538285, guid: f9d6ec63c608b534a99f3065becdc762, type: 3}
---- !u!23 &986105292
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986105289}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2729b60edd3002e4390542aa33f73351, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &986105293
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 986105289}
-  m_Mesh: {fileID: 1118531500694538285, guid: f9d6ec63c608b534a99f3065becdc762, type: 3}
 --- !u!1 &986149935
 GameObject:
   m_ObjectHideFlags: 0
@@ -29264,6 +29186,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 248673984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1072775229
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1072775230}
+  m_Layer: 0
+  m_Name: Ref.005
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1072775230
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072775229}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.38268346, z: 0.92387956, w: 0}
+  m_LocalPosition: {x: 0, y: 2.374715, z: 1.1242446}
+  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3196701675300887480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1077572609
 GameObject:
@@ -34347,7 +34300,7 @@ Transform:
   m_GameObject: {fileID: 1239699586}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -19.18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36943,6 +36896,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323761777}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1325396562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325396563}
+  m_Layer: 0
+  m_Name: Ref.005
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1325396563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325396562}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000001475215, y: -0.000001385808, z: -0.000000029802322, w: 1}
+  m_LocalPosition: {x: 0, y: 1.0809792, z: 1.3099995}
+  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 812966256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1325596156
 GameObject:
   m_ObjectHideFlags: 0
@@ -41257,7 +41241,7 @@ Transform:
   - {fileID: 862107167}
   - {fileID: 1002087764}
   - {fileID: 993877719}
-  - {fileID: 1952947038}
+  - {fileID: 851908346}
   - {fileID: 1740550107}
   - {fileID: 22366423}
   m_Father: {fileID: 37537594}
@@ -42971,9 +42955,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514646547}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38268346, y: -0, z: -0, w: 0.9238795}
-  m_LocalPosition: {x: 0, y: -13.67398, z: -0.17699967}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -19.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1229123200}
@@ -43115,447 +43099,6 @@ Transform:
   - {fileID: 451443187}
   m_Father: {fileID: 1968792020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1521557058
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1521557059}
-  - component: {fileID: 1521557060}
-  m_Layer: 0
-  m_Name: Ref.005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1521557059
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521557058}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.000001475215, y: -0.000001385808, z: -0.000000029802322, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0809792, z: 1.3099995}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 812966256}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
---- !u!114 &1521557060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1521557058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8173e4ba580074ebec38b552e3214d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _category: 
-  registry:
-    handles:
-    - enabled: 1
-      typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      inspectedMembers:
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: DetachChildren
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsFirstSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsLastSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SendTransformChangedScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 1
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: position
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localPosition
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: eulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localEulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: right
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: up
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: forward
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localRotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotationOrder
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parent
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parentInternal
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: worldToLocalMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localToWorldMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: root
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: childCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: lossyScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hasChanged
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCapacity
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: constrainProportionsScale
-        _editorSelectedGizmoIndex: 0
 --- !u!1 &1528470928
 GameObject:
   m_ObjectHideFlags: 0
@@ -44980,6 +44523,115 @@ Transform:
   m_Children: []
   m_Father: {fileID: 990687872}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1579189625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1579189626}
+  - component: {fileID: 1579189629}
+  - component: {fileID: 1579189628}
+  - component: {fileID: 1579189627}
+  m_Layer: 0
+  m_Name: Mesh_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1579189626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579189625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071058, y: 0.00000011920929, z: -0.7071078, w: -0.000002099201}
+  m_LocalPosition: {x: 0, y: -0.0030003467, z: -1.9399999}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 968159574}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 180}
+--- !u!64 &1579189627
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579189625}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1118531500694538285, guid: f9d6ec63c608b534a99f3065becdc762, type: 3}
+--- !u!23 &1579189628
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579189625}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 2729b60edd3002e4390542aa33f73351, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1579189629
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1579189625}
+  m_Mesh: {fileID: 1118531500694538285, guid: f9d6ec63c608b534a99f3065becdc762, type: 3}
 --- !u!1 &1582463890
 GameObject:
   m_ObjectHideFlags: 0
@@ -47778,8 +47430,8 @@ MonoBehaviour:
   - {fileID: 1768436871}
   - {fileID: 2122774536}
   - {fileID: 1694112327}
-  - {fileID: 101982492}
   - {fileID: 1929792976}
+  - {fileID: 101982492}
   applicationCoordinator: {fileID: 1242232249}
   arucoTracking: {fileID: 544962569}
   cameraCanvas: {fileID: 1266699289}
@@ -52130,7 +51782,7 @@ Transform:
   m_GameObject: {fileID: 1802349679}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.1906, y: -0.03379999, z: 0}
+  m_LocalPosition: {x: -0.009900004, y: -0.03379999, z: 0}
   m_LocalScale: {x: 0.035598233, y: 0.017208854, z: 0.017208854}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57735,447 +57387,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951194205}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1952947037
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1952947038}
-  - component: {fileID: 1952947039}
-  m_Layer: 0
-  m_Name: Ref.005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1952947038
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952947037}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.0000014454126, y: -0.0000016540289, z: 0.00000010430813, w: 1}
-  m_LocalPosition: {x: 0, y: 2.008843, z: 0.17410496}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1446155388}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
---- !u!114 &1952947039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1952947037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8173e4ba580074ebec38b552e3214d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _category: 
-  registry:
-    handles:
-    - enabled: 1
-      typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      inspectedMembers:
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: DetachChildren
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsFirstSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsLastSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SendTransformChangedScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 1
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: position
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localPosition
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: eulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localEulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: right
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: up
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: forward
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localRotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotationOrder
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parent
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parentInternal
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: worldToLocalMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localToWorldMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: root
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: childCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: lossyScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hasChanged
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCapacity
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: constrainProportionsScale
-        _editorSelectedGizmoIndex: 0
 --- !u!1 &1954215465
 GameObject:
   m_ObjectHideFlags: 0
@@ -59429,6 +58640,37 @@ MonoBehaviour:
   installationRoutineCheckpoint:
     _installationRoutineId: 
     _installationVariants: []
+--- !u!1 &1983822542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983822543}
+  m_Layer: 0
+  m_Name: Ref.005
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1983822543
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983822542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000014305115, y: 1, z: -0.000002861023, w: -0.0000014305115}
+  m_LocalPosition: {x: 0, y: -2.0443063, z: -0.025894767}
+  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4818423248615819138}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986399921
 GameObject:
   m_ObjectHideFlags: 0
@@ -62578,9 +61820,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2108642828}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0000011622906, y: -0.92387956, z: 0.38268343, w: 0.0000027120113}
-  m_LocalPosition: {x: 0.0000028255008, y: -3.6347144, z: -3.3059232}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -19.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1574759838}
@@ -64241,7 +63483,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &895458600371287171
 Transform:
   m_ObjectHideFlags: 0
@@ -64287,24 +63529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7493262600852586799}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &939860479517825309
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1521249796721052023}
-  - component: {fileID: 7249497034258187552}
-  - component: {fileID: 3699852248618769618}
-  m_Layer: 0
-  m_Name: Mesh
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!33 &956125746342051508
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64469,21 +63693,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038613024836577513}
   m_Mesh: {fileID: -6897578539963117139, guid: ad13dd41b4b40c14783de8ed385f63a0, type: 3}
---- !u!4 &1521249796721052023
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939860479517825309}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 1.873, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7110170613710327027}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1658083548893344131
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64698,7 +63907,7 @@ Transform:
   - {fileID: 1909824373084578702}
   - {fileID: 7539382307130627483}
   - {fileID: 3530998863397099696}
-  - {fileID: 8261868317682769264}
+  - {fileID: 1072775230}
   - {fileID: 1445566538793518782}
   - {fileID: 4157279992903880809}
   m_Father: {fileID: 37537594}
@@ -64822,51 +64031,6 @@ Transform:
   - {fileID: 6969094733166217639}
   m_Father: {fileID: 3196701675300887480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &3699852248618769618
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939860479517825309}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2729b60edd3002e4390542aa33f73351, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!23 &3711952261198817218
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65222,415 +64386,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4784118876229777065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7323436539200301848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8173e4ba580074ebec38b552e3214d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _category: 
-  registry:
-    handles:
-    - enabled: 1
-      typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      inspectedMembers:
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: DetachChildren
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsFirstSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsLastSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SendTransformChangedScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 1
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: position
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localPosition
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: eulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localEulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: right
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: up
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: forward
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localRotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotationOrder
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parent
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parentInternal
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: worldToLocalMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localToWorldMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: root
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: childCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: lossyScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hasChanged
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCapacity
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: constrainProportionsScale
-        _editorSelectedGizmoIndex: 0
 --- !u!4 &4818423248615819138
 Transform:
   m_ObjectHideFlags: 0
@@ -65649,7 +64404,7 @@ Transform:
   - {fileID: 4519435698220217557}
   - {fileID: 5030997875803500358}
   - {fileID: 5005495690514854259}
-  - {fileID: 7110170613710327027}
+  - {fileID: 1983822543}
   - {fileID: 5143745560865852691}
   - {fileID: 2235214326591587704}
   m_Father: {fileID: 37537594}
@@ -65662,23 +64417,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5942142240442254136}
   m_Mesh: {fileID: -5523277661179574252, guid: ad13dd41b4b40c14783de8ed385f63a0, type: 3}
---- !u!1 &4864165906597534208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7110170613710327027}
-  - component: {fileID: 6596069552140282143}
-  m_Layer: 0
-  m_Name: Ref.005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!4 &5005495690514854259
 Transform:
   m_ObjectHideFlags: 0
@@ -66090,415 +64828,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6596069552140282143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4864165906597534208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8173e4ba580074ebec38b552e3214d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _category: 
-  registry:
-    handles:
-    - enabled: 1
-      typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-        PublicKeyToken=null
-      inspectedMembers:
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: DetachChildren
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsFirstSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SetAsLastSibling
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: SendTransformChangedScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 1
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: position
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localPosition
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: eulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localEulerAngles
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: right
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: up
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: forward
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localRotation
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: rotationOrder
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parent
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: parentInternal
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: worldToLocalMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: localToWorldMatrix
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: root
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: childCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: lossyScale
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hasChanged
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCapacity
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: hierarchyCount
-        _editorSelectedGizmoIndex: 0
-      - enabled: 0
-        typeName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-        attribute:
-          GizmoType: 0
-          ShowGizmoByDefault: 0
-          Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-          Tweakable: 0
-          Min: 0
-          Max: 1
-          Category: 
-          Description: 
-          DisplayName: 
-        memberName: constrainProportionsScale
-        _editorSelectedGizmoIndex: 0
 --- !u!4 &6762706639426175439
 Transform:
   m_ObjectHideFlags: 0
@@ -66622,30 +64951,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1909824373084578702}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &7110170613710327027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4864165906597534208}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.0000014305115, y: 1, z: -0.000002861023, w: -0.0000014305115}
-  m_LocalPosition: {x: 0, y: -2.0443063, z: -0.025894767}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1521249796721052023}
-  m_Father: {fileID: 4818423248615819138}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
---- !u!33 &7249497034258187552
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939860479517825309}
-  m_Mesh: {fileID: 3058752222880821995, guid: f9d6ec63c608b534a99f3065becdc762, type: 3}
 --- !u!4 &7315022680964114583
 Transform:
   m_ObjectHideFlags: 0
@@ -66661,23 +64966,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 870716894}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7323436539200301848
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8261868317682769264}
-  - component: {fileID: 4784118876229777065}
-  m_Layer: 0
-  m_Name: Ref.005
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &7393993549223931597
 GameObject:
   m_ObjectHideFlags: 0
@@ -66854,21 +65142,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &8261868317682769264
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7323436539200301848}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.38268346, z: 0.92387956, w: 0}
-  m_LocalPosition: {x: 0, y: 2.3747146, z: 1.1242446}
-  m_LocalScale: {x: 1, y: 1.475, z: 1.475}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3196701675300887480}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8266112172996649433
 GameObject:
   m_ObjectHideFlags: 0

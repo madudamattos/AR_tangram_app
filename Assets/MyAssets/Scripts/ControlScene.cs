@@ -151,8 +151,10 @@ public class ControlScene : MonoBehaviour
             templates.transform.GetChild(i).gameObject.SetActive(i == index);
         }
 
-        // coloca os templates no lugar da figura
+        // index = -1 é para tirar a figura da cena
+        if (index == -1) return; 
 
+        // coloca os templates no lugar da figura
         GameObject templateRef = templates.transform.GetChild(0).gameObject;
         GameObject templateChoose = templates.transform.GetChild(index).gameObject;
 
@@ -174,17 +176,10 @@ public class ControlScene : MonoBehaviour
         
         for (int i = 0; i < gap; i++)
         {
-            Debug.Log("Gap:" + gap);
 
             GameObject mesh_1 = equalPieces[i].GetComponent<FindRightTemplate>().GetTemplateMesh();
 
-            Debug.Log(equalPieces[i]);
-            Debug.Log(mesh_1);
-
             GameObject mesh_2 = equalPieces[i + gap].GetComponent<FindRightTemplate>().GetTemplateMesh();
-
-            Debug.Log(equalPieces[i + gap]);
-            Debug.Log(mesh_2);
 
             equalPieces[i + gap].GetComponent<FindRightTemplate>().SetTemplateMeshTransform(mesh_1.transform, 2);
             equalPieces[i].GetComponent<FindRightTemplate>().SetTemplateMeshTransform(mesh_2.transform, 2);
@@ -245,7 +240,7 @@ public class ControlScene : MonoBehaviour
 
         } else
         {
-            if(mode == 1) menus[5].SetActive(true);
+            if(mode == 1) menus[4].SetActive(true);
 
             // cameraCanvas.SetActive(true);
             arucoTracking.SetActive(true);
@@ -256,7 +251,7 @@ public class ControlScene : MonoBehaviour
             found++;
         }
 
-        menus[4].SetActive(true);
+        menus[5].SetActive(true);
     }
 
     public void ResetGame()
