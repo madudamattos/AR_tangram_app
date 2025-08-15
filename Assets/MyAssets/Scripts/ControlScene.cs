@@ -57,19 +57,19 @@ public class ControlScene : MonoBehaviour
         {
             selectPiece();
 
-            if (currentARGameObj == null) Debug.Log("[CONTROLSCENE]: current ar game obj is null");
+            // if (currentARGameObj == null) Debug.Log("[CONTROLSCENE]: current ar game obj is null");
 
             if (!waiting) templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
 
             if (templateFound)
             {
-                Debug.Log("[CONTROLSCENE]: Entered templatefound");
+                Debug.Log("[CONTROLSCENE]: Entrou if templatefound");
                 found++;
 
-                Debug.Log("Found: " + found);
+                Debug.Log("[CONTROLSCENE]: Found: " + found);
                 
                 // game over 
-                if (found > 7)
+                if (found >= 7)
                 {
                     Invoke(nameof(GameOver), 1.5f);
                     Debug.Log("[CONTROLSCENE]: GameOver");
@@ -116,7 +116,7 @@ public class ControlScene : MonoBehaviour
             // Verificação para não repetir o mesmo objeto
             if (selectedObj == currentARGameObj || selectedObj == null)
             {
-                Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
+                //Debug.Log("[CONTROLSCENE]: ignoring selected obj.");
                 return;
             }
 
@@ -251,7 +251,7 @@ public class ControlScene : MonoBehaviour
 
             waiting = true;
             gameloop = true;
-            found++;
+            // found++;
         }
 
         menus[5].SetActive(true);
@@ -296,14 +296,14 @@ public class ControlScene : MonoBehaviour
         // Reset variables
         found = 0;
         waiting = false;
-        gameloop = true;
+        gameloop = false;
         currentARGameObj = null;
         figure = -1;
         mode = -1;
 
         // Reset menus
-        menus[2].SetActive(true);
-        menus[3].SetActive(false);
+        menus[3].SetActive(true);
+        menus[2].SetActive(false);
         menus[4].SetActive(false);
         menus[5].SetActive(false);
     }
@@ -362,22 +362,54 @@ public class ControlScene : MonoBehaviour
 
     public void ShowHint()
     {
-        GameObject correspondentPiece = GetCorrespondentPiece(currentARGameObj);
+        Debug.Log((currentARGameObj == null) ? "currentARGameObj is NULL" : $"currentARGameObj: {currentARGameObj.name}");
 
-        // verifica se a peça correspondente ja ocupou o lugar do mesh_1
-        bool isMesh_1active = correspondentPiece.GetComponent<FindRightTemplate>().GetTemplateMeshActive(2);
+        if (currentARGameObj == null)
+        {
+            Debug.LogError("[CONTROL SCENE]: SHOW HINT: ERRO: currentARGameObj não foi atribuído!");
+            return;
+        }
+
+        GameObject correspondentPiece = GetCorrespondentPiece(currentARGameObj);
+        Debug.Log((correspondentPiece == null) ? "correspondentPiece is NULL" : $"correspondentPiece: {correspondentPiece.name}");
+
+        if (correspondentPiece == null)
+        {
+            Debug.LogError("[CONTROL SCENE]: SHOW HINT:ERRO: correspondentPiece retornou null.");
+            return;
+        }
+
+        FindRightTemplate correspondentTemplate = correspondentPiece.GetComponent<FindRightTemplate>();
+        if (correspondentTemplate == null)
+        {
+            Debug.LogError("[CONTROL SCENE]: SHOW HINT: correspondentPiece não tem FindRightTemplate.");
+            return;
+        }
+
+        bool isMesh_1active = correspondentTemplate.GetTemplateMeshActive(2);
+        Debug.Log($"isMesh_1active: {isMesh_1active}");
+
+        FindRightTemplate currentTemplate = currentARGameObj.GetComponent<FindRightTemplate>();
+        if (currentTemplate == null)
+        {
+            Debug.LogError("[CONTROL SCENE]: SHOW HINT: ERRO: currentARGameObj não tem FindRightTemplate.");
+            return;
+        }
 
         if (isMesh_1active)
-        {
-            currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh(2);
-        }
+            currentTemplate.ActivateTemplateMesh(2);
         else
+            currentTemplate.ActivateTemplateMesh(1);
+
+        if (soundHint == null)
         {
-            currentARGameObj.GetComponent<FindRightTemplate>().ActivateTemplateMesh(1);
+            Debug.LogError(" ERRO: soundHint não foi atribuído.");
+            return;
         }
-        
+
         soundHint.Play();
     }
+
 
     public void GameOver()
     {

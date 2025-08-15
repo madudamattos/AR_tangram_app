@@ -1,23 +1,23 @@
 # ninja log v5
-2	1567	7756004592832853	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
-5	174	7756019352474346	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
-174	286	7756019353690518	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
-44	1375	7756004590914570	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
-22	1379	7756004590949669	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
-7	1433	7756004591509987	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
-27	1391	7756004591091470	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
-32	1410	7756004591282741	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
-15	1377	7756004590919611	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
-38	1513	7756004592312823	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
-1567	1676	7756004593954330	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e
+15	2056	7757737317766271	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
 76	548	7757737302731892	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
 549	837	7757737305349779	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
-60	1862	7757737315810504	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
-38	1865	7757737315628612	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
-67	1866	7757737315944036	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
 53	1869	7757737315628612	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
-22	1871	7757737315598085	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
+38	1865	7757737315628612	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
+60	1862	7757737315810504	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
 30	1885	7757737316192745	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
+22	1871	7757737315598085	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
+67	1866	7757737315944036	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
 45	1992	7757737317165995	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
-15	2056	7757737317766271	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
 2056	2180	7757737318804851	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e
+84	601	7761308047562512	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	3a8b8a8794210900
+602	930	7761308050692664	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libswappywrapper.so	9ad5eea17289e4d3
+33	2059	7761308062096080	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c6060833cd21273b
+74	2072	7761308062202443	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	73f91bc8bfc328ac
+56	2080	7761308062278453	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	c290d545823beb66
+27	2088	7761308062384435	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	faf12fd2745909a8
+19	2116	7761308062675831	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	1a4e4d55cbbb051a
+49	2120	7761308062695815	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	7790ea72f16b2ee9
+65	2243	7761308063964283	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	32b4886a950cb7e0
+40	2317	7761308064678924	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	8653a8dc72388877
+2318	2423	7761308065782097	C:/Users/maria/Unity/Tangram AR + Camera/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/6ex36n36/obj/arm64-v8a/libgame.so	cdd982014c97e83e

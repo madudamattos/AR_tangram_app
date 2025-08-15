@@ -6,13 +6,10 @@ public class CheckCollisionRight : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        Debug.Log("1:" + col.gameObject.transform.parent.name);
-        Debug.Log(col.gameObject.transform.parent.name.Substring(0, 5));
-
         if (col.gameObject.transform.parent.name.Substring(0, 5) == "Piece")
         {
             colliderName = col.gameObject.transform.parent.name;
-            Debug.Log("[CHECK COLLISION]: piece found: " + colliderName);
+            // Debug.Log("[CHECK COLLISION]: piece found: " + colliderName);
         }
         else
         {

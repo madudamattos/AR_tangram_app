@@ -18,7 +18,6 @@ public class CheckPosition : FindRightTemplate
     // Scripts
     [SerializeField] ControlScene _controlScene;
 
-
     // Infos about current piece
     [Header("Piece Sensors Reference")]
     [SerializeField] List<Collider> pieceCollidersList = new List<Collider>();
@@ -30,6 +29,7 @@ public class CheckPosition : FindRightTemplate
     [Header("Optional Template Points Reference")]
     [SerializeField] List<Transform> optionalTemplatePoints = new List<Transform>();
 
+    private GameObject meshCollider;
 
     // Assets
     [Header("Extra Assets")]
@@ -66,10 +66,10 @@ public class CheckPosition : FindRightTemplate
 
     bool VerifyStartConditions()
     {
-        if (_controlScene.GetGameLoop() == false) return false;
         if (templateFound) return false;
 
-        // verifing variables
+        if(_controlScene.GetGameLoop() == false) return false;
+        
         if (templatePiece == null)
         {
             Debug.Log("[CHECKPOSITION]: Template piece is null");
@@ -96,6 +96,11 @@ public class CheckPosition : FindRightTemplate
             return false;
         }
 
+        if(meshCollider == null)
+        {
+            meshCollider = this.transform.Find("Mesh Collider").gameObject;  
+        }
+
         return true;
     }
 
@@ -111,12 +116,12 @@ public class CheckPosition : FindRightTemplate
         if (pieceName == "Piece.001" || pieceName == "Piece.002" || pieceName == "Piece.005" || pieceName == "Piece.003" || pieceName == "Piece.006")
         {
             if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
-               pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
-               pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
+                pieceCollidersList[2].bounds.Contains(templatePointsList[2].position) &&
+                pieceCollidersList[3].bounds.Contains(templatePointsList[3].position))
                 return 1;
             else if (pieceCollidersList[1].bounds.Contains(templatePointsList[1].position) &&
-                    pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
-                    pieceCollidersList[2].bounds.Contains(templatePointsList[3].position))
+                     pieceCollidersList[3].bounds.Contains(templatePointsList[2].position) &&
+                     pieceCollidersList[2].bounds.Contains(templatePointsList[3].position))
                 return 1;
             // peça 2 não tem posição opcional
             if (optionalTemplatePoints.Count != 0)
@@ -181,8 +186,8 @@ public class CheckPosition : FindRightTemplate
     protected IEnumerator IsSamePosition(int flag)
     {
         isChecking = true;
-
-        yield return new WaitForSeconds(.5f);
+        
+        yield return new WaitForSeconds(.6f);
 
         isChecking = false;
 
@@ -206,6 +211,7 @@ public class CheckPosition : FindRightTemplate
                 base.ActivateTemplateMesh(flag);
                 Invoke(nameof(ChangeTemplate), 1.0f);
                 soundPieceFound.Play();
+                meshCollider.SetActive(false);
                 templateFound = true;
             }
         }
