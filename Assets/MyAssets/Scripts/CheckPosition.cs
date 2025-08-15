@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-// using UnityEditor; 
+using System;
+using UnityEditor; 
 
 [RequireComponent(typeof(FindRightTemplate))]
 public class CheckPosition : FindRightTemplate
@@ -30,6 +31,8 @@ public class CheckPosition : FindRightTemplate
     [SerializeField] List<Transform> optionalTemplatePoints = new List<Transform>();
 
     private GameObject meshCollider;
+
+    public event Action OnTemplateFound;
 
     // Assets
     [Header("Extra Assets")]
@@ -213,6 +216,7 @@ public class CheckPosition : FindRightTemplate
                 soundPieceFound.Play();
                 meshCollider.SetActive(false);
                 templateFound = true;
+                OnTemplateFound?.Invoke();
             }
         }
     }

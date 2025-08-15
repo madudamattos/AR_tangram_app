@@ -40,7 +40,6 @@ public class ControlScene : MonoBehaviour
     private bool gameloop = false;
     private bool templateFound = false;
     private int found = 0;
-    private bool waiting = false;
     private bool meshState = true;
     private int index = -1;
 
@@ -50,42 +49,38 @@ public class ControlScene : MonoBehaviour
     [SerializeField] private GameObject confetti;
     [SerializeField] private Transform confettiRef;
 
+    void Start()
+    {
+        for (int i = 0; i < ARGameObjects.Length; i++)
+        {
+            ARGameObjects[i].GetComponent<CheckPosition>().OnTemplateFound += HandlePieceFound;
+        }
+
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (gameloop && mode == 1)
         {
             selectPiece();
-
-            // if (currentARGameObj == null) Debug.Log("[CONTROLSCENE]: current ar game obj is null");
-
-            if (!waiting) templateFound = currentARGameObj.GetComponent<CheckPosition>().TemplateFound();
-
-            if (templateFound)
-            {
-                Debug.Log("[CONTROLSCENE]: Entrou if templatefound");
-                found++;
-
-                Debug.Log("[CONTROLSCENE]: Found: " + found);
-                
-                // game over 
-                if (found >= 7)
-                {
-                    Invoke(nameof(GameOver), 1.5f);
-                    Debug.Log("[CONTROLSCENE]: GameOver");
-                    gameloop = false;
-                    return;
-                }
-
-                PieceDetector[index].SetActive(false);
-
-                templateFound = false;
-                waiting = true;
-                    
-                Debug.Log("[CONTROLSCENE]: Set waiting = true");
-            }
-
         }
+    }
+
+    private void HandlePieceFound()
+    {
+        found++;
+
+        if (found >= 7)
+        {
+            Invoke(nameof(GameOver), 1.5f);
+            gameloop = false;
+            return;
+        }
+
+        PieceDetector[index].SetActive(false);
+
+        Debug.Log("[CONTROLSCENE]: Handle Piece Found called");
     }
 
     public void selectPiece()
@@ -121,9 +116,6 @@ public class ControlScene : MonoBehaviour
             }
 
             currentARGameObj = selectedObj;
-
-            waiting = false;
-            Debug.Log("[CONTROLSCENE]: Set waiting = false");
         }
 
         return;
@@ -249,7 +241,6 @@ public class ControlScene : MonoBehaviour
             arucoTracking.SetActive(true);
             applicationCoordinator.SetActive(true);
 
-            waiting = true;
             gameloop = true;
             // found++;
         }
@@ -295,7 +286,6 @@ public class ControlScene : MonoBehaviour
 
         // Reset variables
         found = 0;
-        waiting = false;
         gameloop = false;
         currentARGameObj = null;
         figure = -1;
@@ -319,7 +309,6 @@ public class ControlScene : MonoBehaviour
             if (meshRenderer != null)
             {
                 meshRenderer.enabled = meshState;
-                Debug.Log($"[CONTROL SCENE]: MeshRenderer de {PieceDetector[i].name} desativado.");
             }
         }
 
